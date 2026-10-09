@@ -1,4 +1,4 @@
-/* Central editable portfolio catalogue. Smaller case studies include original source images; see PROJECTS_GUIDE.md. */
+/* Central editable portfolio catalogue, including source-grounded archive case studies. */
 window.FARHAN_PORTFOLIO = {
   "categories": [
     {
@@ -672,8 +672,8 @@ window.FARHAN_PORTFOLIO = {
           ],
           "code": {
             "language": "python",
-            "caption": "Complete generate_signals function from project/modules/strategy.py",
-            "text": "def generate_signals(df):\n    \"\"\"Generate long, neutral or short signals from configured moving averages.\"\"\"\n    df[\"Signal\"] = 0\n\n    df.loc[df[Fast_MA] > df[Slow_MA], \"Signal\"] = 1\n    df.loc[df[Fast_MA] < df[Slow_MA], \"Signal\"] = -1\n\n    return df"
+            "caption": "Source function: project/modules/strategy.py (Fast_MA and Slow_MA are imported from config.py)",
+            "text": "def generate_signals(df):\n    \"\"\"\n    generate_signals - generates +1, 0, -1 signals based\n    on Fast_MA and Slow_MA crossovers\n    \"\"\"\n    df[\"Signal\"] = 0\n    \n    df.loc[df[Fast_MA] > df[Slow_MA], \"Signal\"] = 1\n    df.loc[df[Fast_MA] < df[Slow_MA], \"Signal\"] = -1\n    \n    return df"
           },
           "images": [
             {
