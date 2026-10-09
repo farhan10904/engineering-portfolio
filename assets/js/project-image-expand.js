@@ -7,7 +7,7 @@
   function enhanceProjectImages() {
     // Support both hand-authored case-study figures and new auto-generated pages.
     var images = document.querySelectorAll(
-      "#main .case-hero img, #main .case-section img, #dynamic-project img"
+      "#main figure img, #main .case-hero img, #main .case-section img, #dynamic-project img"
     );
 
     images.forEach(function (image) {
