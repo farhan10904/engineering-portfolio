@@ -5,16 +5,131 @@
 <meta name="theme-color" content="#0b1220" />
 <title>ESP32 ultrasonic radar scanner | Farhan Ali</title><meta name="description" content="A servo-driven ultrasonic scanner with a 180° sweep, local OLED output and a live browser-based radar display." />
 <script>(function(){try{var t=localStorage.getItem('farhan-portfolio-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<link rel="stylesheet" href="../assets/css/main.css" /><link rel="stylesheet" href="../assets/css/portfolio.css" />
+<link rel="stylesheet" href="../assets/css/main.css" /><link rel="stylesheet" href="../assets/css/portfolio.css?v=radar-case-study-1" />
 </head><body class="is-preload"><div id="wrapper"><div id="main"><div class="inner">
 <header id="header"><a href="../index.html" class="logo"><strong>Farhan Ali</strong> / Engineering Portfolio</a>
      <ul class="top-links"><li><a href="https://github.com/farhan10904" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li><li><a href="https://medium.com/@farhan10904" target="_blank" rel="noopener noreferrer">Medium ↗</a></li><li><a href="https://www.linkedin.com/in/farhan-ali-95047a245/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li></ul></header>
+
 <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="../index.html#featured">Featured projects</a><span>/</span><span>ESP32 ultrasonic radar scanner</span></div>
-    <section class="case-hero"><p class="eyebrow">SENSING / EMBEDDED · 2026</p><h1>ESP32 ultrasonic radar scanner</h1><p class="case-lede">A servo-driven ultrasonic scanner with a 180° sweep, local OLED output and a live browser-based radar display.</p><div class="case-art accent-violet"><svg class="art-svg" role="img" aria-label="Stylised technical illustration for this project, not a prototype photograph" viewBox="0 0 600 335" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="g" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="currentColor" stroke-opacity=".12" stroke-width="1"/></pattern></defs><rect width="600" height="335" fill="url(#g)" /><g font-family="monospace" font-size="13" letter-spacing="1.2" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M120 262A180 180 0 0 1 480 262 M160 262A140 140 0 0 1 440 262 M200 262A100 100 0 0 1 400 262 M240 262A60 60 0 0 1 360 262" opacity=".6"/><path d="M300 262l124-124"/><path d="M120 262h360" opacity=".4"/><circle cx="300" cy="262" r="8" fill="currentColor"/><circle cx="424" cy="138" r="9" fill="currentColor"/></g><text x="35" y="45">ULTRASONIC / SWEEP / 180°</text><text x="385" y="305">DISTANCE / ANGLE</text></g></svg></div>
-     <div class="case-meta"><div><span>PROJECT TYPE</span><b>Personal project</b></div><div><span>TOOLS & TECHNOLOGIES</span><b>ESP32 · HC-SR04 · SG90 · OLED · Wi-Fi</b></div><div><span>STATUS</span><b>Physical prototype built</b></div></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">ENGINEERING RECORD</p><h2>Design and implementation</h2></div></div><div class="case-points"><article><span class="case-num">01</span><div><h3>System design</h3><p>Integrated an HC-SR04 ultrasonic sensor, SG90 servo, OLED display and live Wi-Fi dashboard.</p></div></article><article><span class="case-num">02</span><div><h3>Early simulation</h3><p>Validated logic in Wokwi before building the physical electronics.</p></div></article><article><span class="case-num">03</span><div><h3>Power architecture</h3><p>Separated servo and ultrasonic supply from the ESP32 using a 5 V MT3608/18650 power rail with common ground.</p></div></article><article><span class="case-num">04</span><div><h3>Interface protection</h3><p>Used a resistor divider to protect the ESP32 3.3 V GPIO from the HC-SR04 5 V Echo signal and debugged sensor/servo timing faults.</p></div></article></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">VERIFICATION</p><h2>Evidence and limitations</h2></div></div><div class="evidence-panel"><p>The prototype and troubleshooting are documented in the CV. Range-error, angular-repeatability and power-consumption measurements have not been supplied.</p><p class="evidence-next"><strong>Next evidence to add:</strong> Add photographs, pinout, browser screenshots and controlled range/angle test data.</p></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">SOURCE & DOCUMENTATION</p><h2>Explore the project</h2></div></div><p>The linked repository contains the available source materials. Original project photographs, diagrams and a full technical report will be integrated here as the case study is expanded.</p><div class="hero-actions"><a href="https://github.com/farhan10904/ESP32_Radar_Scanner" target="_blank" rel="noopener noreferrer" class="button primary">Open GitHub repository ↗</a><a href="../index.html#featured" class="button outline">Back to projects</a></div></section>
+<section class="case-hero">
+  <p class="eyebrow">EMBEDDED SYSTEMS / SENSING · PERSONAL PROJECT</p>
+  <h1>ESP32 ultrasonic radar scanner</h1>
+  <p class="case-lede">A Wi-Fi-enabled ultrasonic scanning demonstrator built around an ESP32, HC-SR04 sensor, SG90 servo and 0.96-inch OLED. The servo sweeps through 180° while the ESP32 measures distance and publishes live readings to a browser dashboard hosted on the microcontroller.</p>
+  <div class="radar-visual-grid">
+    <figure class="radar-visual radar-hardware">
+      <img src="https://raw.githubusercontent.com/farhan10904/ESP32_Radar_Scanner/main/docs/images/Full%20View.png" alt="Actual ESP32 radar scanner breadboard assembly with HC-SR04 ultrasonic sensor, SG90 servo, ESP32 and wiring" loading="eager"/>
+      <figcaption><strong>Physical prototype</strong> - breadboard, external sensor/servo power rail and temporary sensor mount</figcaption>
+    </figure>
+    <figure class="radar-visual radar-dashboard">
+      <img src="https://raw.githubusercontent.com/farhan10904/ESP32_Radar_Scanner/main/docs/images/Actual%20Dashboard.png" alt="Actual browser dashboard showing radar plot, sweep angle, distance and object status" loading="eager"/>
+      <figcaption><strong>Live web dashboard</strong> - angle, distance and object detection over Wi-Fi</figcaption>
+    </figure>
+  </div>
+  <div class="case-meta">
+    <div><span>PROJECT TYPE</span><b>Independent embedded systems build</b></div>
+    <div><span>CORE HARDWARE</span><b>ESP32 · HC-SR04 · SG90 · I²C OLED · MT3608</b></div>
+    <div><span>DEMONSTRATED</span><b>Servo sweep, distance sensing, OLED and Wi-Fi dashboard</b></div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">01 / PROJECT BRIEF</p><h2>Objective and demonstrated functions</h2></div></div>
+  <p>Develop a low-cost ultrasonic scanner that can rotate a sensor, measure distances at successive commanded angles and present the latest measurement locally and remotely. The system was first exercised in Wokwi, then transferred to a physical breadboard assembly.</p>
+  <div class="radar-metrics">
+    <div><strong>0–180°</strong><span>Commanded servo sweep range</span></div>
+    <div><strong>0–100 cm</strong><span>Dashboard display range for final test area</span></div>
+    <div><strong>2 outputs</strong><span>Local OLED and browser dashboard</span></div>
+    <div><strong>2 supply paths</strong><span>USB ESP32 and external 5 V sensor/servo rail</span></div>
+  </div>
+  <p><strong>Terminology:</strong> This is an ultrasonic scanning demonstrator, not a radio-frequency radar. The servo angle is commanded in open loop rather than measured with an angle encoder.</p>
+</section>
+
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">02 / SYSTEM ARCHITECTURE</p><h2>From sensor sweep to live displays</h2></div></div>
+  <div class="radar-system-flow">
+    <div><span>01</span><strong>Servo sweep</strong><p>ESP32 commands the SG90 from 0° to 180°, reverses, then repeats.</p></div>
+    <div><span>02</span><strong>Ultrasonic acquisition</strong><p>The HC-SR04 produces a return pulse used to calculate round-trip distance.</p></div>
+    <div><span>03</span><strong>Local feedback</strong><p>The OLED displays the latest angle, distance and scan/object state.</p></div>
+    <div><span>04</span><strong>Wi-Fi visualization</strong><p>The ESP32 serves a dashboard; its <code>/data</code> endpoint supplies updated scan values.</p></div>
+  </div>
+  <p>The browser repeatedly requests measurement data and redraws the polar display. The displayed angle is the commanded servo position, not independently verified angular feedback.</p>
+  <div class="radar-equation"><strong>Ultrasonic distance relationship</strong><p>Distance = (echo pulse duration × speed of sound) / 2</p><small>The division by two accounts for the outward and return travel of the sound pulse.</small></div>
+</section>
+
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">03 / ENGINEERING DECISIONS</p><h2>Power, logic levels and testability</h2></div></div>
+  <div class="case-points">
+    <article><span class="case-num">01</span><div><h3>Dedicated 5 V supply</h3><p>An 18650 cell with MT3608 boost converter supplied the SG90 and HC-SR04, rather than drawing servo current through the ESP32's 3.3 V rail. The converter output was adjusted to approximately 5 V using a multimeter before powering the hardware.</p></div></article>
+    <article><span class="case-num">02</span><div><h3>Shared ground reference</h3><p>The ESP32 was powered through USB while its GPIO signals controlled separately powered devices. Common ground connected the controller and external supply so signal levels had a consistent reference.</p></div></article>
+    <article><span class="case-num">03</span><div><h3>Echo input protection</h3><p>The HC-SR04 Echo output operates at 5 V. A 1 kΩ/2 kΩ resistor divider was used before ESP32 GPIO 18, producing approximately 3.33 V for a nominal 5 V high signal.</p></div></article>
+    <article><span class="case-num">04</span><div><h3>Start with simulation</h3><p>Wokwi enabled testing of sensor interfaces, servo sequencing, OLED layout and web-dashboard behaviour before connecting the real wiring and power supply.</p></div></article>
+    <article><span class="case-num">05</span><div><h3>Scale the dashboard to the environment</h3><p>The final browser plot displayed 0–100 cm rather than the earlier 0–400 cm range to suit the available test area. This was a display adjustment, not a verified improvement in sensor resolution.</p></div></article>
+    <article><span class="case-num">06</span><div><h3>Proof-of-concept mounting</h3><p>The HC-SR04 used a temporary taped mount while testing. A printed sensor bracket and more compact enclosure were left for a later mechanical revision.</p></div></article>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">04 / ELECTRICAL DESIGN</p><h2>Hardware and pin connections</h2></div></div>
+  <div class="robot-table-wrap"><table class="robot-component-table">
+    <thead><tr><th>Component</th><th>Connection / role</th><th>Selection rationale</th></tr></thead>
+    <tbody>
+      <tr><td>ESP32 Dev Board</td><td>Controller and Wi-Fi web server</td><td>Integrated wireless connectivity and sufficient GPIO</td></tr>
+      <tr><td>HC-SR04 ultrasonic sensor</td><td>TRIG GPIO 5 · ECHO GPIO 18 via divider</td><td>Low-cost short-range distance acquisition</td></tr>
+      <tr><td>SG90 servo</td><td>Signal GPIO 13 · external 5 V supply</td><td>Rotates the lightweight sensing module</td></tr>
+      <tr><td>0.96-inch I²C OLED</td><td>SDA GPIO 21 · SCL GPIO 22 · 3.3 V</td><td>Live feedback without a separate browser</td></tr>
+      <tr><td>MT3608 boost converter</td><td>18650 battery to ~5 V rail</td><td>Separate sensor/servo power path</td></tr>
+      <tr><td>1 kΩ / 2 kΩ divider</td><td>Echo voltage level shifting</td><td>Reduces nominal 5 V Echo pulse to ~3.33 V</td></tr>
+    </tbody>
+  </table></div>
+  <div class="radar-power"><strong>Power architecture</strong><p>ESP32 USB → ESP32 + OLED (3.3 V)</p><p>18650 → MT3608 (~5 V) → SG90 + HC-SR04</p><p>All subsystem grounds joined; HC-SR04 Echo signal enters the ESP32 through a voltage divider.</p></div>
+  <div class="radar-photo-grid">
+    <figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32_Radar_Scanner/main/docs/images/Close%20Up.png" alt="Close-up photograph of real ESP32 radar breadboard components and wiring" loading="lazy"/><figcaption>Physical wiring and power distribution</figcaption></figure>
+    <figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32_Radar_Scanner/main/docs/images/Oled%20Close%20up.png" alt="Real I2C OLED displaying distance and scan readings on the radar scanner" loading="lazy"/><figcaption>OLED display during hardware operation</figcaption></figure>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">05 / FIRMWARE</p><h2>Open-loop servo scan and data exchange</h2></div></div>
+  <p>The firmware coordinates four functions: servo sweep, ultrasonic measurement, OLED updates and serving live values over Wi-Fi. The dashboard polls the ESP32's <code>/data</code> endpoint and uses the returned values to refresh the display.</p>
+  <p><strong>Sweep function from the original project documentation:</strong></p>
+  <pre class="robot-code"><code>void sweepRadar() {
+  angle += direction;
+
+  if (angle &gt;= 180) direction = -1;
+  if (angle &lt;= 0) direction = 1;
+
+  radarServo.write(angle);
+  currentDistance = getDistance();
+  currentAngle = angle;
+}</code></pre>
+  <p>The function reverses direction at the end of each scan and associates the distance measurement with the latest commanded angle. Mechanical backlash, settling time and timing delays were not independently characterized.</p>
+</section>
+
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">06 / TESTING</p><h2>Simulation, assembly and results</h2></div></div>
+  <div class="case-points">
+    <article><span class="case-num">01</span><div><h3>Wokwi prototype</h3><p>Simulated the ESP32, ultrasonic sensor, servo and OLED to verify the basic wiring and interface logic before assembling the physical circuit.</p></div></article>
+    <article><span class="case-num">02</span><div><h3>Supply bring-up</h3><p>Set the MT3608 output to approximately 5 V using a multimeter. A loose power connection was diagnosed after the servo/sensor rail stopped functioning.</p></div></article>
+    <article><span class="case-num">03</span><div><h3>Physical scan</h3><p>Observed the SG90 sweeping the sensor, the HC-SR04 responding to objects and the OLED displaying live readings.</p></div></article>
+    <article><span class="case-num">04</span><div><h3>Web visualization</h3><p>Connected to the ESP32 dashboard via Wi-Fi and observed live angle, distance and detection updates in the browser.</p></div></article>
+  </div>
+  <div class="radar-photo-grid radar-simulation-grid">
+    <figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32_Radar_Scanner/main/docs/images/wokwi-circuit.png" alt="Original Wokwi circuit diagram used for ESP32 radar simulation" loading="lazy"/><figcaption>Original Wokwi circuit simulation</figcaption></figure>
+    <figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32_Radar_Scanner/main/docs/images/Actual%20Dashboard.png" alt="Actual live ESP32 radar web dashboard from physical testing" loading="lazy"/><figcaption>Browser dashboard during real hardware test</figcaption></figure>
+  </div>
+  <div class="evidence-panel"><p><strong>Verified scope:</strong> The original project documents a functioning servo sweep, ultrasonic response, OLED display and live web dashboard. It does not supply calibrated range-error measurements, angular repeatability statistics, response-time traces or power-consumption logs. These are not claimed.</p></div>
+</section>
+
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">07 / REFLECTION</p><h2>Debugging, limitations and next iteration</h2></div></div>
+  <p>The main practical issues were electrical rather than firmware-related: correct 5 V delivery, a reliable shared ground, a loose power wire and protecting the 3.3 V ESP32 input from a 5 V Echo signal. Testing in Wokwi reduced uncertainty before energising the breadboard hardware.</p>
+  <p>Future improvements include replacing the taped sensor mount with a 3D-printed bracket, shortening the wiring, adding a compact enclosure, logging scans, and measuring distance error and servo-angle repeatability. These improvements are planned rather than completed.</p>
+  <div class="hero-actions">
+    <a href="https://github.com/farhan10904/ESP32_Radar_Scanner" target="_blank" rel="noopener noreferrer" class="button primary">Source code and build notes ↗</a>
+    <a href="https://www.youtube.com/shorts/mmM5P-PULIE" target="_blank" rel="noopener noreferrer" class="button outline">Watch hardware demo ↗</a>
+    <a href="../index.html#featured" class="button outline">Back to projects</a>
+  </div>
+</section>
 </div></div><div id="sidebar"><div class="inner">
       <div class="sidebar-brand"><a href="../index.html" class="sidebar-name">FARHAN ALI<span class="sidebar-suffix"> / ENGINEERING</span></a><div class="sidebar-sub">MEng Mechanical Engineering</div></div>
       <nav id="menu" aria-label="Project navigation"><header class="major"><h2>Explore</h2></header><ul>
