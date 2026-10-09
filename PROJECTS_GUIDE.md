@@ -1,0 +1,72 @@
+# Manage the engineering portfolio
+
+Edit **`assets/js/portfolio-data.js`** on GitHub. This is the main place for adding, hiding, promoting or removing projects. The homepage, project archive and sidebar navigation use this data automatically.
+
+## Add a project
+
+1. Open `assets/js/portfolio-data.js` on GitHub and click the pencil icon.
+2. Copy an existing project entry and paste it inside the `projects: [ ... ]` array.
+3. Change its unique `id`, `title`, `category`, `summary` and `technologies`.
+4. Use `featured: true` to show a large card on the homepage, or `featured: false` to list it in the archive.
+5. Set `ready: true` to enable its detail page. **For a new project, leave `page` empty/omitted.** Its page will then be `project.html?id=YOUR_ID`, populated from `details`.
+6. Commit the file to the `main` branch. GitHub Pages will rebuild automatically.
+
+Example (paste this *inside* the projects array, between other entries):
+
+```js
+{
+  id: "epicyclic-gear",
+  title: "Epicyclic Gear Assembly",
+  category: "cad",
+  featured: false,
+  visible: true,
+  ready: true,
+  label: "MECHANICAL DESIGN",
+  summary: "CAD assembly demonstrating epicyclic gearbox components and motion.",
+  technologies: "Fusion 360",
+  image: "",
+  github: "",
+  medium: "",
+  report: "",
+  details: [
+    { heading: "Design objective", text: "Explain the design objective." },
+    { heading: "Implementation", text: "Describe what you modelled and how." },
+    { heading: "Validation", text: "Describe your actual checks and results." }
+  ]
+},
+```
+
+The example description is illustrative. Replace it with verified project information before publishing it.
+
+## Hide, remove or reorder
+
+- `visible: false` hides the project everywhere without deleting the text.
+- Delete its entire entry to remove it permanently from the catalogue.
+- Move the entry up or down to change its order in the navigation and project listings.
+- `featured: true/false` chooses between featured cards and the archive.
+- `ready: false` disables the detail-page link while retaining its title in the navigation/archive.
+- Edit `categories` to rename or reorder the expandable sidebar categories, but keep IDs consistent with project `category` values.
+
+## Link to your work when ready
+
+- `github`: a specific project's repository URL.
+- `medium`: the published article URL.
+- `report`: an accessible PDF/report URL.
+- `image`: a path such as `assets/images/epicyclic-gear.jpg`. Upload the image into that folder first.
+
+Leave unavailable links as empty strings. Empty buttons **do not appear**.
+
+## Existing projects
+
+The four main case studies still use their original HTML pages (`projects/gimbal.html`, `robot.html`, `brayton.html`, `radar.html`) to preserve detailed material. Their sidebar listings and featured cards are still controlled by `portfolio-data.js`. To revise their long-form body content, edit those individual pages.
+
+New projects without a `page` field use the shared `project.html` page. You can add headings to the `details` array without touching HTML.
+
+## Other website sections
+
+- Homepage introduction, skills, writing introduction, contacts: `index.html`.
+- Styling and theme: `assets/css/portfolio.css`.
+- Site-wide category/project list: `assets/js/portfolio-data.js`.
+- Automatic rendering: `assets/js/portfolio-render.js` (normally do not edit).
+
+HTML5 UP attribution and original licence remain in place.
