@@ -14,10 +14,10 @@ window.FARHAN_PORTFOLIO = {
       id: "gimbal", title: "ESP32 dual-axis PID gimbal", category: "embedded",
       sidebarTitle: "Self-levelling gimbal", featured: true, visible: true, ready: true,
       page: "projects/gimbal.html", accent: "mint", label: "CONTROL / HARDWARE",
-      summary: "A two-axis self-levelling platform using an MPU6050 IMU, two MG996R servos and a custom ESP32 carrier PCB.",
-      technologies: "ESP32 · C/C++ · MPU6050 · KiCad · Fusion 360",
+      summary: "Built a two-axis ESP32 gimbal with MPU6050 feedback, limited-angle PID correction, custom KiCad PCB and printed frame.",
+      technologies: "ESP32 · C/C++ · MPU6050 · PID · KiCad · Fusion 360",
       github: "https://github.com/farhan10904/ESP32-Self-Levelling-Gimbal",
-      medium: "", report: "", image: "",
+      medium: "", report: "", image: "https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/Diagonal.png",
       details: []
     },
     {
