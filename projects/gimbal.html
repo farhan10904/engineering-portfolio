@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#0b1220" />
 <title>ESP32 dual-axis PID gimbal | Farhan Ali</title><meta name="description" content="A two-axis self-levelling platform using an MPU6050 IMU, two MG996R servos and a custom ESP32 carrier PCB." />
 <script>(function(){try{var t=localStorage.getItem('farhan-portfolio-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<link rel="stylesheet" href="../assets/css/main.css" /><link rel="stylesheet" href="../assets/css/portfolio.css?v=gimbal-case-study-20261009" />
+<link rel="stylesheet" href="../assets/css/main.css" /><link rel="stylesheet" href="../assets/css/portfolio.css?v=gimbal-math-schematic-20261009" />
 </head><body class="is-preload"><div id="wrapper"><div id="main"><div class="inner">
 <header id="header"><a href="../index.html" class="logo"><strong>Farhan Ali</strong> / Engineering Portfolio</a>
      <ul class="top-links"><li><a href="https://github.com/farhan10904" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li><li><a href="https://medium.com/@farhan10904" target="_blank" rel="noopener noreferrer">Medium ↗</a></li><li><a href="https://www.linkedin.com/in/farhan-ali-95047a245/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li></ul></header>
@@ -45,12 +45,12 @@
 <div><span>03</span><strong>Control</strong><p>Calculate roll/pitch error and proportional-derivative correction, with integral gain at zero.</p></div>
 <div><span>04</span><strong>Actuate</strong><p>Apply correction around calibrated servo neutral positions within constrained travel.</p></div>
 </div>
-<div class="gimbal-formula">
+<div class="gimbal-formula" role="group" aria-label="Complementary filter, error, and PID control equations">
 <strong>Complementary filter and feedback</strong>
-<p><code>θ̂ = α(θ̂(previous) + ω·Δt) + (1 − α)θ(accel)</code></p>
-<p><code>error = setpoint − filtered angle</code></p>
-<p><code>u = Kp·error + Ki·∫error dt + Kd·d(error)/dt</code></p>
-<small>Filter coefficient α = 0.96. Final demonstration used Ki = 0; this is effectively PD control despite the PID-capable implementation.</small>
+<div class="gimbal-math-row"><span class="gimbal-math-label">Attitude estimate</span><div class="gimbal-math-line">θ̂<sub>k</sub> = α(θ̂<sub>k−1</sub> + ω<sub>k</sub> Δt) + (1 − α)θ<sub>acc,k</sub></div></div>
+<div class="gimbal-math-row"><span class="gimbal-math-label">Control error</span><div class="gimbal-math-line">e(t) = θ<sub>setpoint</sub>(t) − θ̂(t)</div></div>
+<div class="gimbal-math-row"><span class="gimbal-math-label">PID law</span><div class="gimbal-math-line">u(t) = K<sub>p</sub>e(t) + K<sub>i</sub> ∫e(t) dt + K<sub>d</sub> <span class="gimbal-fraction"><span>de(t)</span><span>dt</span></span></div></div>
+<small>α = 0.96. Final tuning used K<sub>i</sub> = 0, so the implemented controller operated as a PD controller, although the firmware supports PID.</small>
 </div>
 <div class="gimbal-spec">
 <div><strong>Axis</strong><strong>Kp</strong><strong>Ki</strong><strong>Kd</strong></div>
@@ -72,7 +72,7 @@
 <tr><td>PCB routing</td><td>1.0 mm 5 V/GND; 0.4 mm 3.3 V; 0.3 mm signal traces</td><td>Wider current-carrying paths than the control signals</td></tr>
 </tbody></table></div>
 <div class="gimbal-photo-grid">
-<figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/kicad-schematic-close-up.png" loading="lazy" alt="Final KiCad ESP32 carrier PCB schematic detail showing sockets, servo connectors and power components"/><figcaption>KiCad schematic and connector integration</figcaption></figure>
+<figure class="gimbal-schematic-figure"><a class="gimbal-schematic-preview" href="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/kicad-schematic-close-up.png" target="_blank" rel="noopener noreferrer" title="Open full KiCad schematic in a new tab"><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/kicad-schematic-close-up.png" loading="lazy" alt="KiCad electrical schematic; select to open the full-resolution file"/></a><figcaption>KiCad schematic and connector integration - <a href="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/kicad-schematic-close-up.png" target="_blank" rel="noopener noreferrer">View full resolution ↗</a></figcaption></figure>
 <figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/kicad-pcb-preview.png" loading="lazy" alt="KiCad three-dimensional rendering of the ESP32 custom gimbal carrier PCB"/><figcaption>Routed PCB: 70 × 55 mm with labelled headers and M3 mounting</figcaption></figure>
 <figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/Both%20Sides%20of%20PCB.png" loading="lazy" alt="Photographs of both sides of manufactured ESP32 gimbal carrier PCB"/><figcaption>Manufactured PCB, front and rear</figcaption></figure>
 <figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/Inside.png" loading="lazy" alt="Assembled gimbal internal electronics, carrier PCB and power components mounted inside enclosure"/><figcaption>PCB and wiring integrated into the physical enclosure</figcaption></figure>
