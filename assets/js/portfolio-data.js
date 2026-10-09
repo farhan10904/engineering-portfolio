@@ -33,10 +33,10 @@ window.FARHAN_PORTFOLIO = {
       id: "brayton", title: "Brayton-cycle gas turbine simulator", category: "simulation",
       sidebarTitle: "Brayton-cycle simulator", featured: true, visible: true, ready: true,
       page: "projects/brayton.html", accent: "amber", label: "ENERGY / SIMULATION",
-      summary: "A numerical tool comparing ideal and non-ideal Brayton cycles and the trade-off between net power and thermal efficiency.",
-      technologies: "Python · NumPy · Pandas · Matplotlib",
+      summary: "Python gas turbine model comparing ideal and real Brayton cycles with pressure-ratio sweeps, exergy analysis and saved performance results.",
+      technologies: "Python · NumPy · Pandas · Matplotlib · Thermodynamics",
       github: "https://github.com/farhan10904/Brayton-Cycle-Turbine-Simulator",
-      medium: "", report: "", image: "", details: []
+      medium: "", report: "", image: "https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Power_vs_Pressure_Ratio.png", details: []
     },
     {
       id: "radar", title: "ESP32 ultrasonic radar scanner", category: "embedded",
