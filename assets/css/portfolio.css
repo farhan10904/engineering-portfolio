@@ -417,3 +417,45 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 @media (prefers-reduced-motion:reduce) {
   .gimbal-image-expand img { transition:none; }
 }
+
+
+/* Universal click-to-expand images on every engineering case study. */
+#main .case-hero a.portfolio-image-expander,
+#main .case-section a.portfolio-image-expander,
+#dynamic-project a.portfolio-image-expander {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-width:0;
+  overflow:hidden;
+  border:0;
+  border-radius:6px;
+  cursor:zoom-in;
+}
+#main a.portfolio-image-expander:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+#main a.portfolio-image-expander img {
+  max-width:100%;
+}
+#main .case-hero figcaption a.portfolio-expand-link,
+#main .case-section figcaption a.portfolio-expand-link,
+#dynamic-project figcaption a.portfolio-expand-link {
+  color:var(--accent);
+  border:0;
+  text-decoration:underline;
+  font-weight:600;
+  white-space:nowrap;
+}
+#main .portfolio-auto-image {
+  margin:1.25rem 0;
+  max-width:900px;
+}
+#main .portfolio-auto-image figcaption {
+  padding-top:.6rem;
+  color:var(--muted);
+  text-align:center;
+  font-size:.82rem;
+}
