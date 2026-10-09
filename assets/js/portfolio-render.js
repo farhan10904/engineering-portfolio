@@ -59,6 +59,27 @@
     const expl = document.querySelector("#featured .section-header > p");
     if (expl) expl.textContent = "Selected engineering projects with technical evidence and further documentation.";
   }
+  const showcase = document.querySelector("#additional-work .archive-showcase-grid");
+  if (showcase) {
+    const curated = projects.filter(p => !p.featured && Number.isInteger(p.showcaseOrder))
+      .sort((a,b) => a.showcaseOrder - b.showcaseOrder);
+    showcase.innerHTML = curated.map(p => {
+      const cat = cats.find(c => c.id === p.category);
+      const href = pageURL(p);
+      const label = esc(cat?.label || "Engineering");
+      const cover = safe(p.image)
+        ? '<img src="' + esc(p.image) + '" alt="' + esc(p.title) + '" loading="lazy" />'
+        : '<div class="archive-teaser-placeholder"><span>' + esc((cat?.label || "Project").toUpperCase()) +
+          '</span><strong>' + esc(p.id === "trading" ? "MA10 / MA50" : p.id === "night-light" ? "LDR / 555" : "NACA 0020") + '</strong></div>';
+      const start = href ? '<a class="archive-teaser" href="' + esc(href) + '">' : '<article class="archive-teaser">';
+      const end = href ? '</a>' : '</article>';
+      return start + '<div class="archive-teaser-cover">' + cover + '</div>' +
+        '<div class="archive-teaser-body"><span class="archive-teaser-category">' + label + '</span>' +
+        '<strong>' + esc(p.title) + '</strong><p>' + esc(p.cardSummary || p.summary || "") + '</p>' +
+        (href ? '<span class="archive-teaser-view">View project ↗</span>' : '') +
+        '</div>' + end;
+    }).join("");
+  }
   const archive = document.querySelector("#additional-work .archive-grid");
   if (archive) {
     archive.innerHTML = cats.map((cat,i) => {
