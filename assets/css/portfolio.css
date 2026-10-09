@@ -261,3 +261,12 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 .robot-code code {color:var(--heading)}
 @media(max-width:1050px) {.robot-metrics,.robot-flow {grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:630px) {.robot-metrics,.robot-flow,.robot-gallery {grid-template-columns:1fr}.robot-gallery img {height:260px}.robot-hero-photo img {max-height:320px}}
+
+/* Fix Spacing */
+.case-points + .evidence-panel {
+  margin-top: 1.75rem;
+}
+
+.evidence-panel p:last-child {
+  margin-bottom: 0;
+}
