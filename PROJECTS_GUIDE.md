@@ -70,3 +70,15 @@ New projects without a `page` field use the shared `project.html` page. You can 
 - Automatic rendering: `assets/js/portfolio-render.js` (normally do not edit).
 
 HTML5 UP attribution and original licence remain in place.
+
+
+## Project photographs and graph expansion
+
+Images on project case-study pages now gain an automatic **Expand ↗** link.
+Visitors can click either the photograph or the link to open the original image at full resolution.
+This includes project photos, CAD renders, KiCad diagrams and saved simulation plots.
+
+For a custom HTML project page, put each image inside a `<figure>` with an optional `<figcaption>`.
+For a new catalogue-generated project, supply `image` in `portfolio-data.js`; it will be expandable automatically.
+The shared script is `assets/js/project-image-expand.js`; you do not need to add links by hand.
+Featured homepage thumbnails continue to open their corresponding project pages.
