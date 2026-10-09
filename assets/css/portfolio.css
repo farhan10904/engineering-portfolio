@@ -226,3 +226,12 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 }
 /* Original Editorial button palette should not recolour the theme control. */
 #theme-toggle { color: var(--heading) !important; }
+
+/* Central project catalogue: optional links, archive and shared detail pages. */
+.project-extra-links { display:flex; flex-wrap:wrap; gap:.5rem; padding-top:1rem; }
+.project-extra-links .button { font-size:.65rem; line-height:2.2rem; height:2.3rem; padding:0 .8rem; }
+.portfolio-muted-nav { display:block; padding:.5em 0; opacity:.63; font-size:.88em; }
+.portfolio-placeholder { min-height:200px; display:flex; flex-direction:column; justify-content:center; gap:1rem; padding:2rem; background:var(--portfolio-panel,#172633); color:inherit; }
+.portfolio-placeholder span { text-transform:uppercase; letter-spacing:.12em; font-size:.65rem; opacity:.7; }
+.portfolio-placeholder strong { font-size:1.3rem; line-height:1.4; }
+.portfolio-detail-photo { display:block; width:100%; max-height:520px; object-fit:contain; margin:2rem 0; border-radius:.6rem; }
