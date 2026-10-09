@@ -269,3 +269,31 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 #main .case-section .case-points + .evidence-panel {
   margin-top: 0;
 }
+
+
+/* Radar scanner case study - bounded image gallery and responsive technical panels */
+.radar-visual-grid { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); align-items:stretch; gap:1.1rem; margin:1.5rem 0 .5rem; max-width:1060px; }
+.radar-visual,.radar-photo-grid figure { margin:0; min-width:0; border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:.85rem; display:flex; flex-direction:column; justify-content:space-between; }
+.radar-visual img { display:block; width:100%; height:330px; object-fit:contain; border-radius:6px; }
+.radar-visual figcaption,.radar-photo-grid figcaption { color:var(--muted); font-size:.81rem; line-height:1.5; padding:.75rem .15rem .1rem; text-align:center; }
+.radar-visual figcaption strong { color:var(--heading); }
+.radar-metrics,.radar-system-flow { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.95rem; margin:1.6rem 0 2rem; }
+.radar-metrics>div,.radar-system-flow>div { background:var(--panel); border:1px solid var(--line); border-radius:9px; padding:1.3rem 1rem; min-width:0; }
+.radar-metrics strong { color:var(--heading); font-size:1.14rem; display:block; line-height:1.4; }
+.radar-metrics span { display:block; color:var(--muted); font-size:.77rem; line-height:1.55; margin-top:.4rem; }
+.radar-system-flow span { display:block; color:var(--accent); font:700 .78rem Consolas,monospace; margin-bottom:.7rem; }
+.radar-system-flow strong { display:block; color:var(--heading); font-size:.95rem; margin-bottom:.55rem; }
+.radar-system-flow p { margin:0; font-size:.82rem; line-height:1.55; }
+.radar-equation,.radar-power { background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:.3rem .6rem .6rem .3rem; padding:1.5rem 1.7rem; margin:1.7rem 0; }
+.radar-equation strong,.radar-power strong { color:var(--heading); display:block; margin-bottom:.6rem; }
+.radar-equation p { font-family:Consolas,monospace; font-size:.98rem; color:var(--heading); margin:.5rem 0; }
+.radar-equation small { color:var(--muted); }
+.radar-power p { margin:.35rem 0; }
+.radar-photo-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:2rem 0; }
+.radar-photo-grid img { width:100%; height:265px; object-fit:contain; border-radius:6px; }
+.radar-simulation-grid img { height:280px; }
+.project-cover img { display:block; width:100%; height:100%; object-fit:cover; }
+.project-cover:has(img) .project-cover-tag { background:rgba(11,18,32,.83); color:#dcf7f1; padding:.4rem .65rem; border-radius:4px; }
+@media(max-width:1050px) { .radar-metrics,.radar-system-flow { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:730px) { .radar-visual-grid,.radar-photo-grid {grid-template-columns:1fr;} .radar-visual img {height:310px} .radar-photo-grid img {height:250px} }
+@media(max-width:450px) { .radar-metrics,.radar-system-flow {grid-template-columns:1fr;} .radar-visual img {height:270px;} .radar-equation,.radar-power {padding:1.1rem;} }

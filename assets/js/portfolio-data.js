@@ -42,10 +42,10 @@ window.FARHAN_PORTFOLIO = {
       id: "radar", title: "ESP32 ultrasonic radar scanner", category: "embedded",
       sidebarTitle: "Radar scanner", featured: true, visible: true, ready: true,
       page: "projects/radar.html", accent: "violet", label: "SENSING / EMBEDDED",
-      summary: "A servo-driven ultrasonic scanner with a 180° sweep, OLED output and live browser-based radar display.",
-      technologies: "ESP32 · HC-SR04 · SG90 · OLED · Wi-Fi",
+      summary: "Built and tested an ESP32 ultrasonic scanner with 180° servo sweep, OLED readout and live Wi-Fi radar dashboard.",
+      technologies: "ESP32 · HC-SR04 · SG90 · OLED · MT3608 · Wi-Fi",
       github: "https://github.com/farhan10904/ESP32_Radar_Scanner",
-      medium: "", report: "", image: "", details: []
+      medium: "", report: "", image: "https://raw.githubusercontent.com/farhan10904/ESP32_Radar_Scanner/main/docs/images/Actual%20Dashboard.png", details: []
     },
     // Smaller projects stay in the archive without invented details or broken links.
     // Set ready: true and provide details when their case studies are complete.
