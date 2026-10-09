@@ -235,3 +235,29 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 .portfolio-placeholder span { text-transform:uppercase; letter-spacing:.12em; font-size:.65rem; opacity:.7; }
 .portfolio-placeholder strong { font-size:1.3rem; line-height:1.4; }
 .portfolio-detail-photo { display:block; width:100%; max-height:520px; object-fit:contain; margin:2rem 0; border-radius:.6rem; }
+
+/* Surgical instrument carrier case study */
+.robot-hero-photo { margin:1.6rem 0 0; display:flex; flex-direction:column; align-items:center; gap:.6rem; }
+.robot-hero-photo img { width:100%; max-width:940px; height:min(58vw,510px); object-fit:contain; background:var(--panel); border:1px solid var(--line); border-radius:12px; }
+.robot-hero-photo figcaption, .robot-gallery figcaption { font-size:.83rem; color:var(--muted); text-align:center; line-height:1.5; }
+.robot-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin:1.6rem 0 2rem; }
+.robot-metrics>div { border:1px solid var(--line); border-radius:9px; padding:1.3rem 1rem; background:var(--panel); }
+.robot-metrics strong {display:block; font-size:1.18rem; color:var(--heading); line-height:1.4}
+.robot-metrics span {display:block; margin-top:.35rem; font-size:.77rem; line-height:1.5; color:var(--muted)}
+.robot-flow {display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.9rem; margin:1.5rem 0 2rem}
+.robot-flow>div {border:1px solid var(--line); padding:1.2rem 1rem; border-radius:8px; background:var(--panel)}
+.robot-flow span {display:block; color:var(--accent); font:700 .75rem Consolas,monospace; margin-bottom:.6rem}
+.robot-flow strong {display:block; font-size:.95rem; color:var(--heading); margin-bottom:.6rem}
+.robot-flow p {font-size:.81rem; line-height:1.6; margin:0}
+.robot-gallery {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:2rem 0}
+.robot-gallery figure {margin:0; min-width:0; background:var(--panel); border:1px solid var(--line); padding:.8rem; border-radius:10px}
+.robot-gallery img {display:block; width:100%; height:330px; object-fit:contain; border-radius:6px}
+.robot-gallery figcaption {padding:.8rem .3rem .25rem}
+.robot-table-wrap {width:100%; overflow-x:auto; margin:1.5rem 0}
+.robot-component-table {width:100%; min-width:640px; border-collapse:collapse}
+.robot-component-table th,.robot-component-table td {padding:.75rem .8rem; text-align:left; vertical-align:top}
+.robot-component-table th {color:var(--heading); white-space:nowrap}
+.robot-code {white-space:pre; overflow-x:auto; background:var(--panel); border:1px solid var(--line); border-radius:9px; padding:1.3rem; font-size:.85rem; line-height:1.6}
+.robot-code code {color:var(--heading)}
+@media(max-width:1050px) {.robot-metrics,.robot-flow {grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:630px) {.robot-metrics,.robot-flow,.robot-gallery {grid-template-columns:1fr}.robot-gallery img {height:260px}.robot-hero-photo img {height:360px}}
