@@ -383,3 +383,37 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 @media(max-width:1050px){.brayton-metrics,.brayton-flow {grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:730px){.brayton-figure-grid,.brayton-equations {grid-template-columns:1fr;}.brayton-main-plot img {height:280px;}}
 @media(max-width:460px){.brayton-metrics,.brayton-flow {grid-template-columns:1fr;}.brayton-figure-grid img {height:230px;}}
+
+
+/* Open source photographs, PCB layouts and CAD models at full resolution. */
+.gimbal-image-expand {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-width:0;
+  border:0;
+  cursor:zoom-in;
+  border-radius:6px;
+  overflow:hidden;
+}
+.gimbal-image-expand img {
+  display:block;
+  max-width:100%;
+}
+.gimbal-image-expand:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+.gimbal-hero-gallery figcaption .gimbal-expand-label,
+.gimbal-photo-grid figcaption .gimbal-expand-label {
+  color:var(--accent);
+  text-decoration:underline;
+  font-weight:600;
+  border:0;
+  white-space:nowrap;
+}
+.gimbal-image-expand:hover img { opacity:.92; }
+@media (prefers-reduced-motion:reduce) {
+  .gimbal-image-expand img { transition:none; }
+}
