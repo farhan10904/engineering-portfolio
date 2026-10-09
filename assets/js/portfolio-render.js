@@ -76,14 +76,70 @@
       caseEl.innerHTML = '<section class="case-section"><h1>Project not found</h1><p>This project may be unpublished or hidden.</p><a href="' + base + 'index.html">Return to the portfolio</a></section>';
       return;
     }
+
     const cat = cats.find(c => c.id === p.category);
+    const imageURL = url => {
+      if (!safe(url)) return "";
+      return /^https:\/\//i.test(url) ? url : base + url;
+    };
+    const paragraph = value => '<p>' + esc(value) + '</p>';
+    const list = values => Array.isArray(values) && values.length
+      ? '<ul class="archive-bullet-list">' + values.map(v => '<li>' + esc(v) + '</li>').join("") + '</ul>'
+      : '';
+    const photos = images => {
+      if (!Array.isArray(images) || !images.length) return "";
+      const items = images.filter(im => im && imageURL(im.src)).map(im => {
+        const src = imageURL(im.src);
+        const alt = im.alt || im.caption || p.title;
+        return '<figure class="archive-image-figure">' +
+          '<img loading="lazy" src="' + esc(src) + '" alt="' + esc(alt) + '">' +
+          (im.caption ? '<figcaption>' + esc(im.caption) + '</figcaption>' : '') +
+          '</figure>';
+      }).join("");
+      return items ? '<div class="archive-figure-grid">' + items + '</div>' : "";
+    };
+
     document.title = p.title + " | Farhan Ali";
-    const d = Array.isArray(p.details) ? p.details : [];
-    const sections = d.map((entry,i) => '<article><span class="case-num">' + String(i+1).padStart(2,"0") + '</span><div><h3>' + esc(entry.heading || "") + '</h3><p>' + esc(entry.text || "") + '</p></div></article>').join("");
-    const image = safe(p.image) ? '<img class="portfolio-detail-photo" src="' + esc(base+p.image) + '" alt="' + esc(p.title) + '" />' : '';
-    caseEl.innerHTML = '<div class="breadcrumbs"><a href="' + base + 'index.html">Home</a><span>/</span><span>' + esc(p.title) + '</span></div>' +
-      '<section class="case-hero"><p class="eyebrow">' + esc(cat?.label.toUpperCase() || "ENGINEERING PROJECT") + '</p><h1>' + esc(p.title) + '</h1><p class="case-lede">' + esc(p.summary || "") + '</p>' + image + '</section>' +
-      (sections ? '<section class="case-section"><div class="section-header"><div><p class="eyebrow">PROJECT DETAILS</p><h2>Engineering case study</h2></div></div><div class="case-steps">' + sections + '</div></section>' : '') +
-      '<section class="case-section"><div class="section-header"><div><p class="eyebrow">FURTHER DOCUMENTATION</p><h2>Explore the project</h2></div></div><div class="hero-actions">' + externalLinks(p) + '<a href="' + base + 'index.html#featured" class="button outline">Back to projects</a></div></section>';
+    const sectionsData = Array.isArray(p.sections) ? p.sections : [];
+    const sections = sectionsData.length
+      ? sectionsData.map((entry, i) => '<section class="case-section archive-case-section">' +
+        '<div class="section-header"><div><p class="eyebrow">' + String(i + 1).padStart(2, "0") +
+        ' / ' + esc(p.type || cat?.label || "ENGINEERING WORK") + '</p><h2>' + esc(entry.heading) + '</h2></div></div>' +
+        (Array.isArray(entry.paragraphs) ? entry.paragraphs.map(paragraph).join("") : "") +
+        list(entry.bullets) + photos(entry.images) + '</section>').join("")
+      : (Array.isArray(p.details) && p.details.length
+        ? '<section class="case-section"><div class="section-header"><div><p class="eyebrow">PROJECT DETAILS</p><h2>Engineering case study</h2></div></div><div class="case-steps">' +
+        p.details.map((entry, i) => '<article><span class="case-num">' + String(i + 1).padStart(2, "0") +
+          '</span><div><h3>' + esc(entry.heading || "") + '</h3><p>' + esc(entry.text || "") + '</p></div></article>').join("") +
+        '</div></section>' : '');
+    const facts = Array.isArray(p.facts) && p.facts.length
+      ? '<div class="archive-facts">' + p.facts.map(fact => '<div><strong>' +
+        esc(fact.value) + '</strong><span>' + esc(fact.label) + '</span></div>').join("") + '</div>' : '';
+    const heroImg = imageURL(p.image)
+      ? photos([{src:p.image,caption:"Project overview",alt:p.title}])
+      : '';
+    caseEl.innerHTML =
+      '<div class="breadcrumbs"><a href="' + base + 'index.html">Home</a><span>/</span>' +
+      '<a href="' + base + 'index.html#additional-work">Additional work</a><span>/</span><span>' + esc(p.title) + '</span></div>' +
+      '<section class="case-hero archive-case-hero"><p class="eyebrow">' + esc((p.type || cat?.label || "ENGINEERING").toUpperCase()) +
+      '</p><h1>' + esc(p.title) + '</h1><p class="case-lede">' + esc(p.summary || "") + '</p>' +
+      '<p class="archive-technologies">' + esc(p.technologies || "") + '</p>' +
+      facts + heroImg + '</section>' + sections +
+      '<section class="case-section archive-case-section"><div class="section-header"><div>' +
+      '<p class="eyebrow">DOCUMENTATION</p><h2>Related work</h2></div></div>' +
+      '<p>The content and images are drawn from the original engineering portfolio and linked project materials. Results are described as coursework, training or prototype work according to their documented scope.</p>' +
+      '<div class="hero-actions">' + externalLinks(p) +
+      '<a href="' + base + 'index.html#additional-work" class="button outline">Back to project archive</a></div></section>';
+
+    // Notion archive images require a one-time upload to assets/images/archive.
+    // Until present, hide missing images gracefully instead of showing broken icons.
+    caseEl.querySelectorAll(".archive-image-figure img").forEach(img => {
+      const hideIfBroken = () => {
+        const figure = img.closest(".archive-image-figure");
+        if (figure) figure.hidden = true;
+      };
+      img.addEventListener("error", hideIfBroken);
+      if (img.complete && img.naturalWidth === 0) hideIfBroken();
+    });
   }
 })();
