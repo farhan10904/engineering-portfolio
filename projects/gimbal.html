@@ -5,16 +5,144 @@
 <meta name="theme-color" content="#0b1220" />
 <title>ESP32 dual-axis PID gimbal | Farhan Ali</title><meta name="description" content="A two-axis self-levelling platform using an MPU6050 IMU, two MG996R servos and a custom ESP32 carrier PCB." />
 <script>(function(){try{var t=localStorage.getItem('farhan-portfolio-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<link rel="stylesheet" href="../assets/css/main.css" /><link rel="stylesheet" href="../assets/css/portfolio.css" />
+<link rel="stylesheet" href="../assets/css/main.css" /><link rel="stylesheet" href="../assets/css/portfolio.css?v=gimbal-case-study-20261009" />
 </head><body class="is-preload"><div id="wrapper"><div id="main"><div class="inner">
 <header id="header"><a href="../index.html" class="logo"><strong>Farhan Ali</strong> / Engineering Portfolio</a>
      <ul class="top-links"><li><a href="https://github.com/farhan10904" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li><li><a href="https://medium.com/@farhan10904" target="_blank" rel="noopener noreferrer">Medium ↗</a></li><li><a href="https://www.linkedin.com/in/farhan-ali-95047a245/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li></ul></header>
-<div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="../index.html#featured">Featured projects</a><span>/</span><span>ESP32 dual-axis PID gimbal</span></div>
-    <section class="case-hero"><p class="eyebrow">CONTROL / HARDWARE · 2026</p><h1>ESP32 dual-axis PID gimbal</h1><p class="case-lede">A two-axis self-levelling platform using an MPU6050 IMU, two MG996R servos and a custom ESP32 carrier PCB.</p><div class="case-art accent-mint"><svg class="art-svg" role="img" aria-label="Stylised technical illustration for this project, not a prototype photograph" viewBox="0 0 600 335" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="g" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="currentColor" stroke-opacity=".12" stroke-width="1"/></pattern></defs><rect width="600" height="335" fill="url(#g)" /><g font-family="monospace" font-size="13" letter-spacing="1.2" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M172 230 L172 124 L438 124 L438 230" opacity=".7"/><path d="M210 124v-42h188v42M212 230h186" opacity=".4"/><rect x="231" y="145" width="150" height="64" rx="8" transform="rotate(-9 306 177)"/><circle cx="172" cy="230" r="20"/><circle cx="438" cy="230" r="20"/><path d="M306 141v-36M306 240v-32M275 177h-38M381 177h26" opacity=".5"/></g><text x="35" y="45">IMU / DUAL AXIS / CLOSED LOOP</text><text x="390" y="302">θ / PID / SERVO</text></g></svg></div>
-     <div class="case-meta"><div><span>PROJECT TYPE</span><b>Personal project</b></div><div><span>TOOLS & TECHNOLOGIES</span><b>ESP32 · C/C++ · MPU6050 · KiCad · Fusion 360</b></div><div><span>STATUS</span><b>Prototype assembled previously · rebuild and measurement planned</b></div></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">ENGINEERING RECORD</p><h2>Design and implementation</h2></div></div><div class="case-points"><article><span class="case-num">01</span><div><h3>Control architecture</h3><p>Combined accelerometer and gyroscope readings with a complementary filter. Independent PID loops controlled roll and pitch.</p></div></article><article><span class="case-num">02</span><div><h3>Mechanical integration</h3><p>Designed and modified mounting geometry and electronics enclosure in Fusion 360. PLA components were manufactured by FDM.</p></div></article><article><span class="case-num">03</span><div><h3>Custom electronics</h3><p>Designed and assembled a KiCad carrier PCB with removable ESP32 headers, remote IMU connector, 1000 µF bulk capacitance and a separate 5 V servo rail.</p></div></article><article><span class="case-num">04</span><div><h3>Observed limitations</h3><p>Large movements revealed power-delivery limits and PLA frame flex. Mechanical neutral offsets were calibrated, and the validated operating range was limited to ±5° per axis.</p></div></article></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">VERIFICATION</p><h2>Evidence and limitations</h2></div></div><div class="evidence-panel"><p>Original project documentation records a limited ±5° validated range; quantified settling-time, transient supply-voltage and tracking-error measurements have not yet been added.</p><p class="evidence-next"><strong>Next evidence to add:</strong> Reassemble the hardware, inspect wiring, capture baseline response and power measurements, and publish a second report with verified test data.</p></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">SOURCE & DOCUMENTATION</p><h2>Explore the project</h2></div></div><p>The linked repository contains the available source materials. Original project photographs, diagrams and a full technical report will be integrated here as the case study is expanded.</p><div class="hero-actions"><a href="https://github.com/farhan10904/ESP32-Self-Levelling-Gimbal" target="_blank" rel="noopener noreferrer" class="button primary">Open GitHub repository ↗</a><a href="../index.html#featured" class="button outline">Back to projects</a></div></section>
+
+<div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="../index.html#featured">Featured projects</a><span>/</span><span>ESP32 dual-axis self-levelling gimbal</span></div>
+<section class="case-hero">
+<p class="eyebrow">MECHATRONICS / CONTROL SYSTEMS · INDEPENDENT HARDWARE PROJECT</p>
+<h1>ESP32 dual-axis self-levelling gimbal</h1>
+<p class="case-lede">A two-axis stabilisation demonstrator integrating an MPU6050 inertial sensor, ESP32 firmware, complementary filtering, PID control, MG996R servos, a custom two-layer KiCad PCB and a modified 3D-printed Fusion 360 frame.</p>
+<div class="gimbal-hero-gallery">
+  <figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/Diagonal.png" alt="Completed ESP32 gimbal with two-axis frame and printed electronics enclosure, diagonal view" loading="eager"/><figcaption>Completed physical prototype - diagonal view</figcaption></figure>
+  <figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/front.png" alt="Finished ESP32 two-axis gimbal prototype viewed from the front" loading="eager"/><figcaption>Assembled roll/pitch mechanism - front view</figcaption></figure>
+</div>
+<div class="case-meta">
+  <div><span>CONTROL</span><b>ESP32 · MPU6050 · complementary filter · independent roll/pitch PID</b></div>
+  <div><span>HARDWARE</span><b>Custom carrier PCB · MG996R servos ×2 · PLA frame</b></div>
+  <div><span>VALIDATED SCOPE</span><b>Limited-angle correction; servo travel restricted to ±5° around neutral</b></div>
+</div>
+</section>
+<section class="case-section">
+<div class="section-header"><div><p class="eyebrow">01 / PROJECT BRIEF</p><h2>What the prototype was designed to do</h2></div></div>
+<p>The objective was to keep a moving platform approximately level by estimating its roll and pitch, calculating corrective commands and driving two servo axes. The design combined control software with a physical structure, electrical power distribution and a browser-based monitoring interface.</p>
+<div class="gimbal-metrics">
+ <div><strong>2 axes</strong><span>Roll and pitch correction</span></div>
+ <div><strong>±5°</strong><span>Validated servo command travel about calibrated neutral</span></div>
+ <div><strong>70 × 55 mm</strong><span>Two-layer carrier PCB footprint</span></div>
+ <div><strong>60% infill</strong><span>PLA FDM structural parts</span></div>
+</div>
+<p><strong>Scope:</strong> This is a working limited-angle engineering demonstrator, not a precision-stabilised or wide-range commercial gimbal. The reported ±5° figure refers to restricted servo motion, not measured platform attitude accuracy.</p>
+</section>
+<section class="case-section">
+<div class="section-header"><div><p class="eyebrow">02 / CLOSED-LOOP CONTROL</p><h2>Sensor fusion, feedback and servo correction</h2></div></div>
+<p>An MPU6050 mounted on the moving platform provides accelerometer and gyroscope readings. The ESP32 uses both measurements to estimate attitude, compares it with the requested target and commands roll/pitch correction through two MG996R servos.</p>
+<div class="gimbal-flow">
+<div><span>01</span><strong>Measure</strong><p>Acquire MPU6050 accelerometer and gyroscope values over I²C.</p></div>
+<div><span>02</span><strong>Estimate</strong><p>Combine integrated gyro rate and accelerometer attitude using a complementary filter.</p></div>
+<div><span>03</span><strong>Control</strong><p>Calculate roll/pitch error and proportional-derivative correction, with integral gain at zero.</p></div>
+<div><span>04</span><strong>Actuate</strong><p>Apply correction around calibrated servo neutral positions within constrained travel.</p></div>
+</div>
+<div class="gimbal-formula">
+<strong>Complementary filter and feedback</strong>
+<p><code>θ̂ = α(θ̂(previous) + ω·Δt) + (1 − α)θ(accel)</code></p>
+<p><code>error = setpoint − filtered angle</code></p>
+<p><code>u = Kp·error + Ki·∫error dt + Kd·d(error)/dt</code></p>
+<small>Filter coefficient α = 0.96. Final demonstration used Ki = 0; this is effectively PD control despite the PID-capable implementation.</small>
+</div>
+<div class="gimbal-spec">
+<div><strong>Axis</strong><strong>Kp</strong><strong>Ki</strong><strong>Kd</strong></div>
+<div><span>Roll</span><span>1.5</span><span>0.0</span><span>0.1</span></div>
+<div><span>Pitch</span><span>1.5</span><span>0.0</span><span>0.1</span></div>
+</div>
+<p>Controller gains were adjusted for the assembled prototype, not identified from a measured dynamic model. The filter reduces gyroscope drift while retaining short-term gyro responsiveness; it cannot correct mechanical backlash or insufficient servo supply current.</p>
+</section>
+<section class="case-section">
+<div class="section-header"><div><p class="eyebrow">03 / ELECTRICAL & PCB DESIGN</p><h2>From breadboard to a manufactured carrier PCB</h2></div></div>
+<p>A compact two-layer KiCad board replaced the breadboard wiring, with socketed ESP32 headers, servo connectors, a remote MPU6050 connector, labelled power input and mounting holes. The carrier approach kept the major modules removable for testing and reuse.</p>
+<div class="robot-table-wrap"><table class="robot-component-table">
+<thead><tr><th>Item</th><th>Design / connection</th><th>Engineering purpose</th></tr></thead><tbody>
+<tr><td>ESP32 Dev Board</td><td>Socketed headers; USB-powered controller</td><td>Firmware, servo commands and Wi-Fi dashboard</td></tr>
+<tr><td>MPU6050</td><td>I²C SDA GPIO 21, SCL GPIO 22; remote 4-pin connection</td><td>Measures orientation of the moving platform rather than fixed base</td></tr>
+<tr><td>MG996R ×2</td><td>Roll signal GPIO 13; pitch GPIO 19</td><td>Independent axis actuation; GPIO 19 replaced bootstrap-related GPIO 12</td></tr>
+<tr><td>Servo supply</td><td>18650 batteries in parallel → MT3608 boost → external 5 V rail</td><td>Avoids drawing servo current from the ESP32 logic supply</td></tr>
+<tr><td>Bulk / local capacitors</td><td>1000 µF on servo rail; 100 nF local decoupling</td><td>Supports transient rail behaviour; does not guarantee current capacity</td></tr>
+<tr><td>PCB routing</td><td>1.0 mm 5 V/GND; 0.4 mm 3.3 V; 0.3 mm signal traces</td><td>Wider current-carrying paths than the control signals</td></tr>
+</tbody></table></div>
+<div class="gimbal-photo-grid">
+<figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/kicad-schematic-close-up.png" loading="lazy" alt="Final KiCad ESP32 carrier PCB schematic detail showing sockets, servo connectors and power components"/><figcaption>KiCad schematic and connector integration</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/kicad-pcb-preview.png" loading="lazy" alt="KiCad three-dimensional rendering of the ESP32 custom gimbal carrier PCB"/><figcaption>Routed PCB: 70 × 55 mm with labelled headers and M3 mounting</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/Both%20Sides%20of%20PCB.png" loading="lazy" alt="Photographs of both sides of manufactured ESP32 gimbal carrier PCB"/><figcaption>Manufactured PCB, front and rear</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/Inside.png" loading="lazy" alt="Assembled gimbal internal electronics, carrier PCB and power components mounted inside enclosure"/><figcaption>PCB and wiring integrated into the physical enclosure</figcaption></figure>
+</div>
+<p><strong>Power limitation:</strong> Large or abrupt servo movements produced unstable behaviour consistent with inadequate transient supply capability. A bulk capacitor and separate rail helped the design, but the demonstration still required small actuation limits. Voltage transient magnitude and peak current were not instrumented.</p>
+</section>
+<section class="case-section">
+<div class="section-header"><div><p class="eyebrow">04 / CAD & MANUFACTURING</p><h2>Modified two-axis frame and printed enclosure</h2></div></div>
+<p>The starting bracket and platform geometry was based on the <a href="https://howtomechatronics.com/projects/diy-arduino-gimbal-self-stabilizing-platform/" target="_blank" rel="noopener noreferrer">HowToMechatronics self-stabilising platform</a>. I adapted the model for a two-axis ESP32 implementation by removing yaw hardware and designing the electronics box, PCB mounting arrangement, cable cutouts and removable lid.</p>
+<div class="gimbal-photo-grid">
+<figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/cad_full_assembly.png" loading="lazy" alt="Fusion 360 CAD model of the gimbal mechanical assembly and electronics enclosure"/><figcaption>Full Fusion 360 assembly</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/cad_roll_servo_bracket.png" loading="lazy" alt="CAD model of gimbal roll-servo bracket"/><figcaption>Replaceable roll-servo bracket</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/cad_electronics_box.png" loading="lazy" alt="Fusion 360 electronics box featuring PCB mounting and routing cutouts"/><figcaption>Electronics enclosure with PCB, power and wire clearance</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/Electronics%20Box.png" loading="lazy" alt="3D-printed electronics box and removable lid for the gimbal"/><figcaption>Manufactured enclosure and removable lid</figcaption></figure>
+</div>
+<div class="case-points">
+<article><span class="case-num">01</span><div><h3>Removable hardware</h3><p>Socketed ESP32, detachable IMU and mechanically secured PCB enabled disassembly without destroying components.</p></div></article>
+<article><span class="case-num">02</span><div><h3>Manufacturable design</h3><p>Separate PLA FDM brackets, screw mounting, simple rectangular cutouts and a friction-fit lid reduced complexity.</p></div></article>
+<article><span class="case-num">03</span><div><h3>IMU placement</h3><p>The sensor attaches to the moving platform so the controller measures the attitude of the element being stabilised.</p></div></article>
+<article><span class="case-num">04</span><div><h3>Structural compromise</h3><p>Printed parts showed flex and slight deformation; static neutral offsets compensated the resting angle but could not eliminate the mechanical compliance.</p></div></article>
+</div>
+<p>PCB fabrication and 3D printing received student project manufacturing support from <a href="https://www.pcbway.com/" target="_blank" rel="noopener noreferrer">PCBWay</a>. Sponsorship supported fabrication, not a claim of product certification.</p>
+</section>
+<section class="case-section">
+<div class="section-header"><div><p class="eyebrow">05 / FIRMWARE & DASHBOARD</p><h2>Control modes and disconnect handling</h2></div></div>
+<p>The PlatformIO / Arduino firmware runs the sensor-feedback loop and a local ESP32-hosted web server. The dashboard provides live roll/pitch values, sliders for commanded setpoints, a return-to-level control and a heartbeat that switches the system back to stabilisation if browser updates stop.</p>
+<div class="gimbal-spec gimbal-web-routes">
+<div><strong>Web endpoint</strong><strong>Purpose</strong></div>
+<div><span><code>/data</code></span><span>Roll and pitch telemetry as JSON</span></div>
+<div><span><code>/mode</code></span><span>Toggle stabilisation and manual setpoint control</span></div>
+<div><span><code>/setpoint</code></span><span>Update desired roll/pitch angles</span></div>
+<div><span><code>/heartbeat</code></span><span>Keep-alive for setpoint mode; revert when absent</span></div>
+</div>
+<div class="gimbal-photo-grid">
+<figure class="gimbal-wide-img"><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/dashboard.png" loading="lazy" alt="ESP32 gimbal dashboard preview showing roll and pitch indicators and control modes"/><figcaption>Dashboard preview from project documentation</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/BreadBoard.png" loading="lazy" alt="ESP32 gimbal breadboard electronics prototype before PCB fabrication"/><figcaption>Earlier breadboard testing before carrier PCB assembly</figcaption></figure>
+</div>
+<div class="gimbal-code-note">
+<strong>Final firmware's servo limiting</strong>
+<pre class="robot-code"><code>constexpr int ROLL_NEUTRAL = 99;
+constexpr int PITCH_NEUTRAL = 85;
+
+constexpr int ROLL_MIN_POSITION = ROLL_NEUTRAL - 5;
+constexpr int ROLL_MAX_POSITION = ROLL_NEUTRAL + 5;
+
+constexpr int PITCH_MIN_POSITION = PITCH_NEUTRAL - 5;
+constexpr int PITCH_MAX_POSITION = PITCH_NEUTRAL + 5;</code></pre>
+<p>Neutral values account for physical resting offsets. The ±5° restriction applies to the servo command around these calibrated positions; it is not an angle-error measurement. The OLED used in early development was omitted from the final physical build.</p>
+</div>
+</section>
+<section class="case-section">
+<div class="section-header"><div><p class="eyebrow">06 / VALIDATION</p><h2>Development sequence and demonstrated behaviour</h2></div></div>
+<div class="case-points">
+<article><span class="case-num">01</span><div><h3>Wokwi simulation</h3><p>Checked basic sensor fusion, servo commands, Wi-Fi interface logic and control modes before powering physical hardware.</p></div></article>
+<article><span class="case-num">02</span><div><h3>Breadboard test</h3><p>Confirmed IMU communication, servo directions, setpoint control and operation using separated controller/servo supplies.</p></div></article>
+<article><span class="case-num">03</span><div><h3>PCB and mechanical integration</h3><p>Finished KiCad routing and DRC, ordered the PCB, soldered the board and assembled printed parts and power electronics.</p></div></article>
+<article><span class="case-num">04</span><div><h3>Limited-angle demonstration</h3><p>Recorded observable roll/pitch correction and dashboard telemetry with both servo axes restricted to ±5° of command travel around calibrated neutral.</p></div></article>
+</div>
+<div class="evidence-panel gimbal-evidence"><p><strong>Evidence boundary:</strong> Physical photographs, KiCad images, code, design files and a demonstration video support completion of the prototype and limited-angle correction. No traceable settling-time measurements, calibrated angular-accuracy data or recorded supply-transient waveforms are provided. Precision stabilisation and high-disturbance performance are not claimed.</p></div>
+</section>
+<section class="case-section">
+<div class="section-header"><div><p class="eyebrow">07 / DESIGN LESSONS</p><h2>Why the final range was limited</h2></div></div>
+<p>The electronics and mechanical structure constrained achievable control performance. Sudden servo movements could exceed the practical power-delivery capability of the battery/boost arrangement, while structural flex and alignment offsets complicated tuning. Restricting actuation produced a demonstrable, repeatable operating condition for the completed project.</p>
+<p><strong>Future iteration:</strong> Rebuild the hardware, log command and attitude data, independently measure angle response, instrument the 5 V rail during servo transients, improve bracket stiffness and evaluate a higher-current 5–6 V regulator. These are planned experiments, not completed validation.</p>
+<div class="hero-actions">
+<a class="button primary" href="https://github.com/farhan10904/ESP32-Self-Levelling-Gimbal" target="_blank" rel="noopener noreferrer">Source code, KiCad and CAD ↗</a>
+<a class="button outline" href="https://www.youtube.com/shorts/LKtvDuY0aLw" target="_blank" rel="noopener noreferrer">Watch physical demonstration ↗</a>
+<a class="button outline" href="../index.html#featured">Back to projects</a>
+</div>
+</section>
 </div></div><div id="sidebar"><div class="inner">
       <div class="sidebar-brand"><a href="../index.html" class="sidebar-name">FARHAN ALI<span class="sidebar-suffix"> / ENGINEERING</span></a><div class="sidebar-sub">MEng Mechanical Engineering</div></div>
       <nav id="menu" aria-label="Project navigation"><header class="major"><h2>Explore</h2></header><ul>
