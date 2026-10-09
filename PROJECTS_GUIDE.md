@@ -105,3 +105,19 @@ Before the files are uploaded, the new text pages remain accessible; any unavail
 ## Avoid duplication
 
 The Wokwi gimbal and radar simulations are explicitly labelled development stages of the larger physical projects, not separate completed hardware builds. The CAD and PCB subprojects link to the associated full gimbal repository. Use `featured: false` for these smaller entries.
+
+
+## Homepage: More engineering projects
+
+The six smaller image cards under the four featured projects are controlled by
+`showcaseOrder` in `assets/js/portfolio-data.js`.
+Set it to a number (1–6) for the projects you want visible, and remove that
+property for projects that should appear only in the full archive.
+`cardSummary` supplies the short secondary-card description, while `image`
+(optional) supplies the thumbnail. Projects without an image use a neutral
+technical placeholder; their category/archive listing still works.
+
+For completed external repositories set `github` to the actual GitHub URL.
+Images from the Clutch and Epicyclic repositories are linked directly from
+their published `Images/` folders so they don't need a second GitHub Pages
+upload.

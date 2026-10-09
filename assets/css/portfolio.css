@@ -494,3 +494,25 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 .archive-code-example .robot-code { margin:.6rem 0 0; }
 .archive-code-caption { font-weight:600; color:var(--heading); font-size:.84rem; margin:0; }
 .archive-case-section .archive-bullet-list + .archive-figure-grid { margin-top:1.55rem; }
+
+
+/* Compact visual grid distinguishing secondary projects from featured case studies. */
+.archive-showcase-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.5rem 0 2.8rem;}
+.archive-teaser {display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--heading);text-decoration:none;transition:border-color .16s ease,transform .16s ease;}
+.archive-teaser:hover,.archive-teaser:focus-visible {border-color:var(--accent);transform:translateY(-2px);outline-offset:3px;}
+.archive-teaser-cover {height:170px;display:flex;align-items:center;justify-content:center;background:var(--page);border-bottom:1px solid var(--line);overflow:hidden;}
+.archive-teaser-cover img {display:block;width:100%;height:100%;object-fit:contain;padding:.55rem;}
+.archive-teaser-placeholder {display:flex;flex-direction:column;justify-content:space-between;gap:1rem;width:100%;height:100%;padding:1.35rem;color:var(--accent);background:linear-gradient(145deg,var(--panel),var(--page));}
+.archive-teaser-placeholder span {font:700 .66rem Consolas,monospace;letter-spacing:.08em;opacity:.86;}
+.archive-teaser-placeholder strong {font:600 clamp(1.3rem,2.5vw,2rem) Consolas,monospace;letter-spacing:.03em;}
+.archive-teaser-body {display:flex;flex-direction:column;flex:1;gap:.6rem;padding:1.15rem 1.2rem 1.25rem;}
+.archive-teaser-category {font:700 .68rem Consolas,monospace;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);}
+.archive-teaser-body>strong {font-size:1.03rem;line-height:1.3;color:var(--heading);}
+.archive-teaser-body>p {font-size:.84rem;line-height:1.55;margin:0;color:var(--muted);flex:1;}
+.archive-teaser-view {display:block;margin-top:.25rem;font-weight:700;font-size:.78rem;color:var(--accent);}
+.archive-browse-label {margin-bottom:1.15rem;padding-top:1.15rem;border-top:1px solid var(--line);}
+.archive-browse-label h3 {margin:0 0 .3rem;font-size:1.22rem;}
+.archive-browse-label p {margin:0;color:var(--muted);font-size:.9rem;}
+@media(max-width:1050px) {.archive-showcase-grid {grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:650px) {.archive-showcase-grid {grid-template-columns:1fr;}.archive-teaser-cover {height:200px;}}
+@media(prefers-reduced-motion:reduce) {.archive-teaser {transition:none;}.archive-teaser:hover {transform:none;}}
