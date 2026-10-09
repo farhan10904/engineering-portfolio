@@ -297,3 +297,37 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 @media(max-width:1050px) { .radar-metrics,.radar-system-flow { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:730px) { .radar-visual-grid,.radar-photo-grid {grid-template-columns:1fr;} .radar-visual img {height:310px} .radar-photo-grid img {height:250px} }
 @media(max-width:450px) { .radar-metrics,.radar-system-flow {grid-template-columns:1fr;} .radar-visual img {height:270px;} .radar-equation,.radar-power {padding:1.1rem;} }
+
+
+/* Self-levelling gimbal - responsive hardware and control case study */
+.gimbal-hero-gallery,.gimbal-photo-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1.55rem 0 1rem; max-width:1100px; }
+.gimbal-hero-gallery figure,.gimbal-photo-grid figure { display:flex; flex-direction:column; justify-content:space-between; margin:0; min-width:0; padding:.85rem; border-radius:11px; background:var(--panel); border:1px solid var(--line); }
+.gimbal-hero-gallery img { display:block; width:100%; height:315px; object-fit:contain; border-radius:6px; }
+.gimbal-photo-grid img { display:block; width:100%; height:270px; object-fit:contain; border-radius:6px; }
+.gimbal-hero-gallery figcaption,.gimbal-photo-grid figcaption { padding:.75rem .25rem .1rem; font-size:.81rem; line-height:1.5; color:var(--muted); text-align:center; }
+.gimbal-metrics,.gimbal-flow { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.95rem; margin:1.6rem 0 1.9rem; }
+.gimbal-metrics>div,.gimbal-flow>div { min-width:0; padding:1.25rem 1rem; border-radius:9px; background:var(--panel); border:1px solid var(--line); }
+.gimbal-metrics strong { display:block; font-size:1.16rem; color:var(--heading); line-height:1.45; }
+.gimbal-metrics span {display:block; margin-top:.4rem; font-size:.77rem; line-height:1.55; color:var(--muted);}
+.gimbal-flow span { display:block; margin-bottom:.6rem; font:700 .77rem Consolas,monospace; color:var(--accent); }
+.gimbal-flow strong {display:block; margin-bottom:.6rem; font-size:.94rem; color:var(--heading);}
+.gimbal-flow p {margin:0; font-size:.82rem; line-height:1.55;}
+.gimbal-formula {margin:1.65rem 0; border-left:3px solid var(--accent); border-radius:3px 10px 10px 3px; border-top:1px solid var(--line); border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--panel); padding:1.35rem 1.6rem;}
+.gimbal-formula strong {display:block; color:var(--heading); margin-bottom:.8rem;}
+.gimbal-formula p {overflow-x:auto; margin:0 0 .6rem; padding:.25rem 0; color:var(--heading); }
+.gimbal-formula code {font-size:.82rem; white-space:nowrap; color:var(--heading);}
+.gimbal-formula small {display:block; color:var(--muted); line-height:1.5;}
+.gimbal-spec {max-width:730px; margin:1.2rem 0 1.7rem; border:1px solid var(--line); border-radius:8px; overflow:hidden;}
+.gimbal-spec>div {display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.6rem; padding:.85rem 1.2rem; border-bottom:1px solid var(--line); font-size:.88rem;}
+.gimbal-spec>div:last-child {border-bottom:0;}
+.gimbal-spec>div:first-child {background:var(--panel); color:var(--heading);}
+.gimbal-web-routes>div {grid-template-columns:minmax(100px,1fr) minmax(0,3fr);}
+.gimbal-code-note {margin:1.7rem 0; max-width:840px;}
+.gimbal-code-note>strong {display:block; color:var(--heading); margin-bottom:1rem;}
+.gimbal-code-note pre {margin-bottom:.9rem;}
+.gimbal-code-note p {margin:0;}
+.gimbal-photo-grid figure.gimbal-wide-img img {height:270px;}
+/* Make image covers reliable in split view, preserving original aspect ratio. */
+@media(max-width:1050px) { .gimbal-metrics,.gimbal-flow {grid-template-columns:repeat(2,minmax(0,1fr));} }
+@media(max-width:730px) { .gimbal-hero-gallery,.gimbal-photo-grid {grid-template-columns:1fr;} .gimbal-hero-gallery img {height:290px;} .gimbal-photo-grid img {height:250px;} }
+@media(max-width:470px) { .gimbal-metrics,.gimbal-flow {grid-template-columns:1fr;} .gimbal-formula {padding:1rem;} }
