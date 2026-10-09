@@ -9,12 +9,89 @@
 </head><body class="is-preload"><div id="wrapper"><div id="main"><div class="inner">
 <header id="header"><a href="../index.html" class="logo"><strong>Farhan Ali</strong> / Engineering Portfolio</a>
      <ul class="top-links"><li><a href="https://github.com/farhan10904" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li><li><a href="https://medium.com/@farhan10904" target="_blank" rel="noopener noreferrer">Medium ↗</a></li><li><a href="https://www.linkedin.com/in/farhan-ali-95047a245/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li></ul></header>
+
 <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="../index.html#featured">Featured projects</a><span>/</span><span>Surgical instrument carrier robot</span></div>
-    <section class="case-hero"><p class="eyebrow">ROBOTICS / SOFTWARE · 2025–2026</p><h1>Surgical instrument carrier robot</h1><p class="case-lede">Embedded navigation and instrument-delivery software for an eight-person university robotics project.</p><div class="case-art accent-sky"><svg class="art-svg" role="img" aria-label="Stylised technical illustration for this project, not a prototype photograph" viewBox="0 0 600 335" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="g" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="currentColor" stroke-opacity=".12" stroke-width="1"/></pattern></defs><rect width="600" height="335" fill="url(#g)" /><g font-family="monospace" font-size="13" letter-spacing="1.2" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="3"><rect x="195" y="85" width="210" height="160" rx="20"/><rect x="175" y="106" width="20" height="116" rx="8"/><rect x="405" y="106" width="20" height="116" rx="8"/><circle cx="247" cy="126" r="13"/><circle cx="300" cy="126" r="13"/><circle cx="353" cy="126" r="13"/><path d="M259 182h84M258 202h84M300 245v42M272 287h56M301 89v-26" stroke-dasharray="8 7" opacity=".7"/><path d="M145 287H455" opacity=".45"/></g><text x="35" y="45">NAVIGATION / STATE MACHINE</text><text x="385" y="305">SENSE / DECIDE / ACT</text></g></svg></div>
-     <div class="case-meta"><div><span>PROJECT TYPE</span><b>Sole software developer within eight-person team</b></div><div><span>TOOLS & TECHNOLOGIES</span><b>Arduino · C/C++ · IR sensing · Ultrasonic sensing</b></div><div><span>STATUS</span><b>University project completed and reviewed</b></div></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">ENGINEERING RECORD</p><h2>Design and implementation</h2></div></div><div class="case-points"><article><span class="case-num">01</span><div><h3>Finite-state controller</h3><p>Implemented four navigation states covering line following, line recovery, target approach and instrument delivery.</p></div></article><article><span class="case-num">02</span><div><h3>Sensor-driven navigation</h3><p>Used three IR sensors with proportional motor-speed correction, directional memory for line recovery and ultrasonic range sensing for approach.</p></div></article><article><span class="case-num">03</span><div><h3>Integration and validation</h3><p>Built hardware-independent simulation and subsystem tests before final mechanical and electrical integration.</p></div></article><article><span class="case-num">04</span><div><h3>Demonstrated outcome</h3><p>The final 2,041 g robot passed formal university review and demonstrated line following and delivery within the 300 × 300 × 400 mm envelope. The +5% mass tolerance allowed up to 2,100 g, giving 59 g of margin.</p></div></article></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">VERIFICATION</p><h2>Evidence and limitations</h2></div></div><div class="evidence-panel"><p>Documented evidence includes the project review, prototype demonstration and mechanical constraints. At 2,041 g, the robot exceeded the nominal 2,000 g mass target by 41 g but passed the final +5% acceptance limit of 2,100 g by 59 g. Quantitative navigation error and repeatability results are not included in the current CV record.</p><p class="evidence-next"><strong>Next evidence to add:</strong> Add real photographs, a controller state diagram, simulation screenshots and test records to the case study.</p></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">SOURCE & DOCUMENTATION</p><h2>Explore the project</h2></div></div><p>The linked repository contains the available source materials. Original project photographs, diagrams and a full technical report will be integrated here as the case study is expanded.</p><div class="hero-actions"><a href="https://github.com/farhan10904/Surgical-Instrument-Carrier-Robot" target="_blank" rel="noopener noreferrer" class="button primary">Open GitHub repository ↗</a><a href="../index.html#featured" class="button outline">Back to projects</a></div></section>
+<section class="case-hero">
+<p class="eyebrow">ROBOTICS / EMBEDDED SOFTWARE · 2025–2026</p>
+<h1>Surgical instrument carrier robot</h1>
+<p class="case-lede">An autonomous line-following robot designed to carry and deliver surgical instruments as a university engineering demonstrator. I was the sole software developer within an eight-person team, responsible for the modular embedded controller, navigation, delivery logic and software-side subsystem testing.</p>
+<figure class="robot-hero-photo"><img src="https://raw.githubusercontent.com/farhan10904/Surgical-Instrument-Carrier-Robot/main/images/Overview.jpg" alt="Actual assembled surgical-instrument carrier robot prototype, photographed during the university project" loading="eager" /><figcaption>Physical prototype - team-built mechanical and electrical hardware with firmware developed by me.</figcaption></figure>
+<div class="case-meta">
+<div><span>ROLE</span><b>Sole software engineer in an eight-person team</b></div>
+<div><span>TECHNOLOGIES</span><b>Arduino Uno · C/C++ · IR and ultrasonic sensors · stepper/DC motor control</b></div>
+<div><span>OUTCOME</span><b>Line following and delivery demonstrated; accepted mass and budget limits met</b></div>
+</div>
+</section>
+<section class="case-section"><div class="section-header"><div><p class="eyebrow">01 / PROJECT BRIEF</p><h2>Requirements and design constraints</h2></div></div>
+<p>The team developed a mobile robot to follow a marked route, detect designated delivery locations and actuate an instrument rack. The concept addressed hospital instrument transport, but the prototype was a university demonstrator, not a clinically validated medical device.</p>
+<div class="robot-metrics">
+<div><strong>300 × 300 × 400 mm</strong><span>Maximum design envelope</span></div>
+<div><strong>2,041 g</strong><span>Assembled mass, within +5% allowance</span></div>
+<div><strong>2,100 g</strong><span>Accepted mass maximum (2 kg + 5%)</span></div>
+<div><strong>£244 / £275</strong><span>Reported spend / budget</span></div>
+</div>
+<p><strong>Scope clarification:</strong> I wrote the software and prepared subsystem test sketches. Other team members developed the mechanical design, CAD, physical construction and electrical wiring. The complete robot was a team achievement.</p>
+</section>
+<section class="case-section"><div class="section-header"><div><p class="eyebrow">02 / CONTROL SYSTEM</p><h2>Dual-layer finite-state control</h2></div></div>
+<p>The base control layer handles continuous line tracking and recovery. A higher-priority sequence responds to ultrasonic detection of delivery plates and temporarily overrides normal navigation.</p>
+<div class="robot-flow">
+<div><span>01</span><strong>FollowLine</strong><p>Three TCRT5000 IR sensors feed proportional left/right speed correction.</p></div>
+<div><span>02</span><strong>LostLine</strong><p>Directional memory guides recovery when the marked line is temporarily lost.</p></div>
+<div><span>03</span><strong>ApproachDropoff</strong><p>Front ultrasonic sensor rising-edge detection begins the approach sequence.</p></div>
+<div><span>04</span><strong>DeliverPackage</strong><p>Rear sensor rising-edge detection initiates stepper-driven rack movement.</p></div>
+</div>
+<p>The firmware also uses a post-delivery cooldown to reduce duplicate triggering. It checks for a newly detected plate rather than treating every sample within detection range as a new event.</p>
+</section>
+<section class="case-section"><div class="section-header"><div><p class="eyebrow">03 / ENGINEERING DECISIONS</p><h2>Why the controller was designed this way</h2></div></div>
+<div class="case-points">
+<article><span class="case-num">01</span><div><h3>Proportional control, not full PID</h3><p>Proportional motor-speed correction provided a simpler controller to tune for the robot's route and intended speed. Integral and derivative terms were not introduced without a demonstrated need.</p></div></article>
+<article><span class="case-num">02</span><div><h3>Polling rather than interrupts</h3><p>Sequential sensor reads simplified debugging and integration. The project did not establish measured interrupt-latency or deterministic timing advantages.</p></div></article>
+<article><span class="case-num">03</span><div><h3>Rising-edge ultrasonic events</h3><p>Previous and current readings were compared to prevent a stationary plate from triggering repeated deliveries; the firmware also included a 2,000 ms cooldown.</p></div></article>
+<article><span class="case-num">04</span><div><h3>Separate hardware interfaces</h3><p>Motor control, sensor acquisition, finite-state control and configuration were split into modules, allowing individual tests without rewriting navigation logic.</p></div></article>
+<article><span class="case-num">05</span><div><h3>Hardware-independent simulation</h3><p>Simulation mode injected predefined sensor inputs and substituted Serial output for physical motor commands so state transitions could be exercised before full hardware integration.</p></div></article>
+<article><span class="case-num">06</span><div><h3>Central configuration</h3><p>Pin assignments and tuning parameters were stored centrally, including base motor speed, ultrasonic distance threshold, plate-event timeout and delivery cooldown.</p></div></article>
+</div></section>
+<section class="case-section"><div class="section-header"><div><p class="eyebrow">04 / HARDWARE</p><h2>Key components and subsystem roles</h2></div></div>
+<div class="robot-table-wrap"><table class="robot-component-table"><thead><tr><th>Component</th><th>Role</th><th>Engineering rationale</th></tr></thead><tbody>
+<tr><td>Arduino Uno Rev 3</td><td>Main controller</td><td>Adequate I/O and existing Arduino toolchain within budget</td></tr>
+<tr><td>L298N dual H-bridge</td><td>DC motor drive</td><td>Independent left/right speed and direction control</td></tr>
+<tr><td>3 × TCRT5000 IR</td><td>Line tracking</td><td>Low-cost reflectance-based route sensing</td></tr>
+<tr><td>2 × HC-SR04</td><td>Delivery location detection</td><td>Front/rear event sequence for triggering rack operation</td></tr>
+<tr><td>Stepper motor + A4988-based driver</td><td>Instrument rack actuation</td><td>Discrete stepping of the delivery mechanism</td></tr>
+<tr><td>11.1 V (3S) Li-ion + DC-DC converter</td><td>System power</td><td>Battery supply with regulation for subsystem voltage requirements</td></tr>
+</tbody></table></div>
+<div class="robot-gallery"><figure><img src="https://raw.githubusercontent.com/farhan10904/Surgical-Instrument-Carrier-Robot/main/images/Front.jpg" loading="lazy" alt="Final robot photographed from the front showing the assembled platform" /><figcaption>Final assembly and sensor layout</figcaption></figure><figure><img src="https://raw.githubusercontent.com/farhan10904/Surgical-Instrument-Carrier-Robot/main/images/Wiring.jpg" loading="lazy" alt="Robot prototype showing wiring, controller and motor driver modules during integration" /><figcaption>Electronics, wiring and development integration</figcaption></figure></div>
+</section>
+<section class="case-section"><div class="section-header"><div><p class="eyebrow">05 / SOFTWARE</p><h2>Modular firmware and delivery routine</h2></div></div>
+<p>The source project separates the main state machine, configuration, type definitions, sensor interfaces, motor controls and line-following logic. Dedicated test sketches cover the DC drive, IR sensor readings, ultrasonic distance sensing, stepper mechanism and combined integration.</p>
+<p><strong>Delivery routine excerpt from project documentation:</strong></p>
+<pre class="robot-code"><code>void PackageDelivery() {
+    SetMotorSpeed(0, 0);
+    digitalWrite(DirPin, HIGH);
+
+    for (int i = 0; i &lt; StepsPerRevolution; i++) {
+        digitalWrite(StepPin, HIGH);
+        delayMicroseconds(StepDelay);
+        digitalWrite(StepPin, LOW);
+        delayMicroseconds(StepDelay);
+    }
+}</code></pre>
+<p>The drive is stopped before actuating the delivery mechanism. The stepping loop is blocking: straightforward for the demonstration sequence, but it would need reconsideration for asynchronous control or more demanding safety requirements.</p>
+</section>
+<section class="case-section"><div class="section-header"><div><p class="eyebrow">06 / VALIDATION</p><h2>Build, testing and results</h2></div></div>
+<div class="case-points">
+<article><span class="case-num">01</span><div><h3>Subsystem bring-up</h3><p>DC motors, line sensors, ultrasonic devices and the stepper subsystem were checked with separate test programs prior to full integration.</p></div></article>
+<article><span class="case-num">02</span><div><h3>State-machine simulation</h3><p>Hardware-independent sequences checked control transitions and emitted simulated motor/sensor activity through the Arduino Serial Monitor.</p></div></article>
+<article><span class="case-num">03</span><div><h3>Integrated demonstration</h3><p>The team demonstrated line following and package delivery during the university assessment. The assembled system was reported to fit the required envelope.</p></div></article>
+<article><span class="case-num">04</span><div><h3>Mass and cost checks</h3><p>At 2,041 g, the final robot was 41 g above the nominal 2,000 g target but 59 g under the +5% accepted maximum of 2,100 g. The reported £244 cost was £31 below the £275 budget.</p></div></article>
+</div>
+<div class="evidence-panel"><p><strong>Evidence boundary:</strong> Original project files record the physical demonstration, code organisation, test sketches, mass and cost. They do not establish quantified repeatability, navigation tracking error, electrical reliability or clinical sterility compliance. These are not claimed as validated outcomes.</p></div>
+</section>
+<section class="case-section"><div class="section-header"><div><p class="eyebrow">07 / REFLECTION</p><h2>Key lessons and improvements</h2></div></div>
+<p>This project demonstrated how the reliability of a multidisciplinary prototype depends on clear interfaces and incremental integration. The most useful lessons were modular control logic, early subsystem testing, event-driven sequence design and evaluating the final robot against the actual acceptance criteria.</p>
+<p>Potential future improvements include quantitative tracking-error tests, repeated delivery trials, a non-blocking stepper controller and an investigation of whether full PID improves cornering. These are proposals, not completed validation.</p>
+<div class="hero-actions"><a href="https://github.com/farhan10904/Surgical-Instrument-Carrier-Robot" target="_blank" rel="noopener noreferrer" class="button primary">Explore code and documentation ↗</a><a href="../index.html#featured" class="button outline">Back to projects</a></div>
+</section>
 </div></div><div id="sidebar"><div class="inner">
       <div class="sidebar-brand"><a href="../index.html" class="sidebar-name">FARHAN ALI<span class="sidebar-suffix"> / ENGINEERING</span></a><div class="sidebar-sub">MEng Mechanical Engineering</div></div>
       <nav id="menu" aria-label="Project navigation"><header class="major"><h2>Explore</h2></header><ul>
