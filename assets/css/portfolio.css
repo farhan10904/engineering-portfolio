@@ -351,3 +351,35 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 .gimbal-schematic-figure figcaption a { text-decoration:underline; color:var(--accent); }
 @media(max-width:730px){.gimbal-schematic-preview {height:250px;}.gimbal-math-line {font-size:1.05rem;}}
 @media(prefers-reduced-motion:reduce){.gimbal-schematic-preview img{transition:none;}}
+
+
+/* Brayton cycle case study - analytical plots, equations, and model evidence. */
+.brayton-main-plot {margin:1.6rem 0 1rem; max-width:850px; padding:1rem; background:var(--panel); border:1px solid var(--line); border-radius:12px;}
+.brayton-main-plot>a {display:block; border:0; background:#fff; border-radius:6px; overflow:hidden;}
+.brayton-main-plot img {display:block; height:390px; width:100%; object-fit:contain;}
+.brayton-main-plot figcaption,.brayton-figure-grid figcaption {font-size:.82rem; line-height:1.5; color:var(--muted); text-align:center; padding:.85rem .2rem .12rem;}
+.brayton-main-plot figcaption a,.brayton-figure-grid figcaption a {color:var(--accent); border:0; text-decoration:underline;}
+.brayton-metrics,.brayton-flow {display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin:1.5rem 0 2rem;}
+.brayton-metrics>div,.brayton-flow>div {background:var(--panel); border:1px solid var(--line); border-radius:10px; min-width:0; padding:1.2rem 1rem;}
+.brayton-metrics strong {display:block; color:var(--heading); font-size:1.18rem; line-height:1.4;}
+.brayton-metrics span {display:block; color:var(--muted); font-size:.77rem; line-height:1.55; margin-top:.4rem;}
+.brayton-flow span {display:block; color:var(--accent); font:.78rem Consolas,monospace; margin-bottom:.7rem;}
+.brayton-flow strong {display:block; color:var(--heading); font-size:.94rem; margin-bottom:.55rem;}
+.brayton-flow p {margin:0; font-size:.82rem; line-height:1.55;}
+.brayton-parameter-wrap,.brayton-results-wrap {overflow-x:auto; width:100%; margin:1.5rem 0;}
+.brayton-parameter-wrap table {min-width:700px;}
+.brayton-results {min-width:700px; table-layout:auto;}
+.brayton-equations {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1.5rem 0 1.8rem;}
+.brayton-equations>div {min-width:0; padding:1.2rem 1.35rem; border-radius:8px; border:1px solid var(--line); background:var(--panel);}
+.brayton-equations span {display:block; font-size:.76rem; margin-bottom:.6rem; color:var(--muted);}
+.brayton-equations p {margin:0; white-space:nowrap; overflow-x:auto; font:1.1rem/1.9 "Cambria Math",Georgia,serif; color:var(--heading);}
+.brayton-equations sub,.brayton-equations sup {font-size:.67em;}
+.brayton-figure-grid {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1.7rem 0 2rem;}
+.brayton-figure-grid figure {margin:0; min-width:0; padding:.85rem; border:1px solid var(--line); border-radius:10px; background:var(--panel);}
+.brayton-figure-grid figure>a {display:block; overflow:hidden; border:0; background:#fff; border-radius:5px;}
+.brayton-figure-grid img {display:block; width:100%; height:285px; object-fit:contain;}
+.project-card.accent-amber .project-cover:has(img) {background:#fff;}
+.project-card.accent-amber .project-cover img {object-fit:contain;}
+@media(max-width:1050px){.brayton-metrics,.brayton-flow {grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:730px){.brayton-figure-grid,.brayton-equations {grid-template-columns:1fr;}.brayton-main-plot img {height:280px;}}
+@media(max-width:460px){.brayton-metrics,.brayton-flow {grid-template-columns:1fr;}.brayton-figure-grid img {height:230px;}}
