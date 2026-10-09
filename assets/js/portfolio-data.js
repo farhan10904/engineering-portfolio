@@ -1,4 +1,4 @@
-/* Editable project catalogue. Update entries and showcaseOrder to change the homepage. */
+/* Editable project catalogue. Images are linked from source repositories when available. */
 window.FARHAN_PORTFOLIO = {
   "categories": [
     {
@@ -516,7 +516,7 @@ window.FARHAN_PORTFOLIO = {
           ],
           "images": [
             {
-              "src": "assets/images/archive/night-light-schematic.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/LDR-Night-Light-PCB/main/Images/night-light-schematic.png",
               "caption": "EasyEDA schematic with LDR, transistor and 555 control circuitry",
               "alt": "EasyEDA schematic with LDR, transistor and 555 control circuitry"
             }
@@ -529,7 +529,7 @@ window.FARHAN_PORTFOLIO = {
           ],
           "images": [
             {
-              "src": "assets/images/archive/night-light-layout.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/LDR-Night-Light-PCB/main/Images/night-light-layout.png",
               "caption": "Routed night-light PCB layout",
               "alt": "Routed night-light PCB layout"
             }
@@ -548,7 +548,9 @@ window.FARHAN_PORTFOLIO = {
       "medium": "",
       "report": "",
       "showcaseOrder": 5,
-      "cardSummary": "EasyEDA LDR and 555 timer PCB coursework."
+      "cardSummary": "EasyEDA LDR and 555 timer PCB coursework.",
+      "github": "https://github.com/farhan10904/LDR-Night-Light-PCB",
+      "image": "https://raw.githubusercontent.com/farhan10904/LDR-Night-Light-PCB/main/Images/night-light-layout.png"
     },
     {
       "id": "opamp",
@@ -644,12 +646,12 @@ window.FARHAN_PORTFOLIO = {
           ],
           "images": [
             {
-              "src": "assets/images/archive/trading-architecture.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Algorithmic-Trading-System/main/Images/trading-architecture.png",
               "caption": "Original software architecture from the development portfolio",
               "alt": "Python backtesting system module architecture"
             },
             {
-              "src": "assets/images/archive/trading-module-structure.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Algorithmic-Trading-System/main/Images/trading-module-structure.png",
               "caption": "Repository organisation: data, modules, scripts and logs",
               "alt": "Python project file and folder structure"
             }
@@ -690,7 +692,7 @@ window.FARHAN_PORTFOLIO = {
           },
           "images": [
             {
-              "src": "assets/images/archive/trading-signals.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Algorithmic-Trading-System/main/Images/trading-signals.png",
               "caption": "Original MA10/MA50 strategy visualisation",
               "alt": "Market data and moving average crossover strategy"
             }
@@ -718,7 +720,7 @@ window.FARHAN_PORTFOLIO = {
           ],
           "images": [
             {
-              "src": "assets/images/archive/trading-trade-logs.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Algorithmic-Trading-System/main/Images/trading-trade-logs.png",
               "caption": "Original structured trading transaction log",
               "alt": "Saved trade CSV with entry, exit and profit fields"
             }
@@ -746,7 +748,8 @@ window.FARHAN_PORTFOLIO = {
       "medium": "",
       "report": "",
       "showcaseOrder": 1,
-      "cardSummary": "Python strategy pipeline, risk rules and backtesting."
+      "cardSummary": "Python strategy pipeline, risk rules and backtesting.",
+      "image": "https://raw.githubusercontent.com/farhan10904/Algorithmic-Trading-System/main/Images/trading-signals.png"
     },
     {
       "id": "gimbal-simulation",
