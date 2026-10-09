@@ -1,4 +1,4 @@
-/* Central editable portfolio catalogue, including source-grounded archive case studies. */
+/* Editable project catalogue. Update entries and showcaseOrder to change the homepage. */
 window.FARHAN_PORTFOLIO = {
   "categories": [
     {
@@ -228,7 +228,7 @@ window.FARHAN_PORTFOLIO = {
           ],
           "images": [
             {
-              "src": "assets/images/archive/clutch-assembly.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Single-Plate-Clutch-Assembly/main/Images/clutch-assembly.png",
               "caption": "Complete SolidWorks clutch assembly",
               "alt": "Assembled single-plate automotive clutch model"
             }
@@ -260,7 +260,7 @@ window.FARHAN_PORTFOLIO = {
           ],
           "images": [
             {
-              "src": "assets/images/archive/clutch-section.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Single-Plate-Clutch-Assembly/main/Images/clutch-section.png",
               "caption": "Internal clutch components shown in section view",
               "alt": "Section of SolidWorks clutch showing pressure plate, disc and surrounding components"
             }
@@ -274,12 +274,12 @@ window.FARHAN_PORTFOLIO = {
           ],
           "images": [
             {
-              "src": "assets/images/archive/clutch-exploded.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Single-Plate-Clutch-Assembly/main/Images/clutch-exploded.png",
               "caption": "Exploded view revealing the component arrangement",
               "alt": "Exploded automotive clutch SolidWorks CAD assembly"
             },
             {
-              "src": "assets/images/archive/clutch-drawing.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Single-Plate-Clutch-Assembly/main/Images/clutch-drawing.png",
               "caption": "Engineering assembly drawing with balloons and bill of materials",
               "alt": "Clutch mechanical engineering drawing"
             }
@@ -297,7 +297,11 @@ window.FARHAN_PORTFOLIO = {
       "visible": true,
       "ready": true,
       "medium": "",
-      "report": ""
+      "report": "",
+      "github": "https://github.com/farhan10904/Single-Plate-Clutch-Assembly",
+      "image": "https://raw.githubusercontent.com/farhan10904/Single-Plate-Clutch-Assembly/main/Images/clutch-assembly.png",
+      "showcaseOrder": 2,
+      "cardSummary": "~40-part SolidWorks mechanism and drawings."
     },
     {
       "id": "epicyclic",
@@ -329,7 +333,7 @@ window.FARHAN_PORTFOLIO = {
           ],
           "images": [
             {
-              "src": "assets/images/archive/epicyclic-assembly.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Epicyclic-Gearbox-Assembly/main/Images/epicyclic-assembly.png",
               "caption": "Planetary gearbox assembly model",
               "alt": "Planetary gearbox assembly model"
             }
@@ -343,7 +347,7 @@ window.FARHAN_PORTFOLIO = {
           ],
           "images": [
             {
-              "src": "assets/images/archive/epicyclic-exploded.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Epicyclic-Gearbox-Assembly/main/Images/epicyclic-exploded.png",
               "caption": "Exploded gear, carrier and shaft arrangement",
               "alt": "Exploded gear, carrier and shaft arrangement"
             }
@@ -356,12 +360,12 @@ window.FARHAN_PORTFOLIO = {
           ],
           "images": [
             {
-              "src": "assets/images/archive/epicyclic-drawing.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Epicyclic-Gearbox-Assembly/main/Images/epicyclic-drawing.png",
               "caption": "Exploded engineering drawing",
               "alt": "Exploded engineering drawing"
             },
             {
-              "src": "assets/images/archive/epicyclic-carrier-drawing.png",
+              "src": "https://raw.githubusercontent.com/farhan10904/Epicyclic-Gearbox-Assembly/main/Images/epicyclic-carrier-drawing.png",
               "caption": "Carrier plate engineering drawing",
               "alt": "Carrier plate engineering drawing"
             }
@@ -378,7 +382,11 @@ window.FARHAN_PORTFOLIO = {
       "visible": true,
       "ready": true,
       "medium": "",
-      "report": ""
+      "report": "",
+      "github": "https://github.com/farhan10904/Epicyclic-Gearbox-Assembly",
+      "image": "https://raw.githubusercontent.com/farhan10904/Epicyclic-Gearbox-Assembly/main/Images/epicyclic-assembly.png",
+      "showcaseOrder": 3,
+      "cardSummary": "Planetary gearbox assembly and engineering CAD."
     },
     {
       "id": "gimbal-pcb",
@@ -474,7 +482,10 @@ window.FARHAN_PORTFOLIO = {
       "visible": true,
       "ready": true,
       "medium": "",
-      "report": ""
+      "report": "",
+      "showcaseOrder": 4,
+      "cardSummary": "Custom KiCad two-layer carrier for an ESP32 gimbal.",
+      "image": "https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/kicad-pcb-preview.png"
     },
     {
       "id": "night-light",
@@ -535,7 +546,9 @@ window.FARHAN_PORTFOLIO = {
       "visible": true,
       "ready": true,
       "medium": "",
-      "report": ""
+      "report": "",
+      "showcaseOrder": 5,
+      "cardSummary": "EasyEDA LDR and 555 timer PCB coursework."
     },
     {
       "id": "opamp",
@@ -731,7 +744,9 @@ window.FARHAN_PORTFOLIO = {
       "visible": true,
       "ready": true,
       "medium": "",
-      "report": ""
+      "report": "",
+      "showcaseOrder": 1,
+      "cardSummary": "Python strategy pipeline, risk rules and backtesting."
     },
     {
       "id": "gimbal-simulation",
@@ -1061,7 +1076,9 @@ window.FARHAN_PORTFOLIO = {
       "visible": true,
       "ready": true,
       "medium": "",
-      "report": ""
+      "report": "",
+      "showcaseOrder": 6,
+      "cardSummary": "Wind-tunnel pressure distributions and lift analysis."
     }
   ]
 };
