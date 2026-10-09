@@ -487,3 +487,10 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 .portfolio-credentials {margin-top:1.7rem; padding:1.1rem 1.3rem; border:1px solid var(--line); border-radius:9px; background:var(--panel);}
 .portfolio-credentials h3 {margin:0 0 .55rem; font-size:.98rem;}
 .portfolio-credentials p {margin:0; font-size:.84rem; color:var(--muted); line-height:1.6;}
+
+
+/* Archived project technical examples */
+.archive-code-example { max-width:920px; margin:1.7rem 0 1.9rem; }
+.archive-code-example .robot-code { margin:.6rem 0 0; }
+.archive-code-caption { font-weight:600; color:var(--heading); font-size:.84rem; margin:0; }
+.archive-case-section .archive-bullet-list + .archive-figure-grid { margin-top:1.55rem; }

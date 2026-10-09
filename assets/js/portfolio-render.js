@@ -86,6 +86,11 @@
     const list = values => Array.isArray(values) && values.length
       ? '<ul class="archive-bullet-list">' + values.map(v => '<li>' + esc(v) + '</li>').join("") + '</ul>'
       : '';
+    const codeSnippet = block => (block && typeof block.text === "string" && block.text.trim())
+      ? '<div class="archive-code-example">' +
+        (block.caption ? '<p class="archive-code-caption">' + esc(block.caption) + '</p>' : '') +
+        '<pre class="robot-code"><code>' + esc(block.text) + '</code></pre></div>'
+      : '';
     const photos = images => {
       if (!Array.isArray(images) || !images.length) return "";
       const items = images.filter(im => im && imageURL(im.src)).map(im => {
@@ -106,7 +111,7 @@
         '<div class="section-header"><div><p class="eyebrow">' + String(i + 1).padStart(2, "0") +
         ' / ' + esc(p.type || cat?.label || "ENGINEERING WORK") + '</p><h2>' + esc(entry.heading) + '</h2></div></div>' +
         (Array.isArray(entry.paragraphs) ? entry.paragraphs.map(paragraph).join("") : "") +
-        list(entry.bullets) + photos(entry.images) + '</section>').join("")
+        list(entry.bullets) + codeSnippet(entry.code) + photos(entry.images) + '</section>').join("")
       : (Array.isArray(p.details) && p.details.length
         ? '<section class="case-section"><div class="section-header"><div><p class="eyebrow">PROJECT DETAILS</p><h2>Engineering case study</h2></div></div><div class="case-steps">' +
         p.details.map((entry, i) => '<article><span class="case-num">' + String(i + 1).padStart(2, "0") +

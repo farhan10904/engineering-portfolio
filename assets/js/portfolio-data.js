@@ -1,54 +1,104 @@
-/* Portfolio content - edit this file to add, hide, or remove projects.
-   Project links are optional. Use verified URLs only.
-   See PROJECTS_GUIDE.md for simple examples. */
+/* Central editable portfolio catalogue, including source-grounded archive case studies. */
 window.FARHAN_PORTFOLIO = {
-  categories: [
-    { id: "embedded", label: "Embedded systems & hardware" },
-    { id: "software", label: "Software & systems" },
-    { id: "cad", label: "CAD & mechanical design" },
-    { id: "electronics", label: "Electronics design" },
-    { id: "simulation", label: "Simulation & analysis" }
+  "categories": [
+    {
+      "id": "embedded",
+      "label": "Embedded systems & hardware"
+    },
+    {
+      "id": "software",
+      "label": "Software & systems"
+    },
+    {
+      "id": "cad",
+      "label": "CAD & mechanical design"
+    },
+    {
+      "id": "electronics",
+      "label": "Electronics design"
+    },
+    {
+      "id": "simulation",
+      "label": "Simulation & analysis"
+    }
   ],
-  projects: [
+  "projects": [
     {
-      id: "gimbal", title: "ESP32 dual-axis PID gimbal", category: "embedded",
-      sidebarTitle: "Self-levelling gimbal", featured: true, visible: true, ready: true,
-      page: "projects/gimbal.html", accent: "mint", label: "CONTROL / HARDWARE",
-      summary: "Built a two-axis ESP32 gimbal with MPU6050 feedback, limited-angle PID correction, custom KiCad PCB and printed frame.",
-      technologies: "ESP32 · C/C++ · MPU6050 · PID · KiCad · Fusion 360",
-      github: "https://github.com/farhan10904/ESP32-Self-Levelling-Gimbal",
-      medium: "", report: "", image: "https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/Diagonal.png",
-      details: []
+      "id": "gimbal",
+      "title": "ESP32 dual-axis PID gimbal",
+      "category": "embedded",
+      "sidebarTitle": "Self-levelling gimbal",
+      "featured": true,
+      "visible": true,
+      "ready": true,
+      "page": "projects/gimbal.html",
+      "accent": "mint",
+      "label": "CONTROL / HARDWARE",
+      "summary": "Built a two-axis ESP32 gimbal with MPU6050 feedback, limited-angle PID correction, custom KiCad PCB and printed frame.",
+      "technologies": "ESP32 · C/C++ · MPU6050 · PID · KiCad · Fusion 360",
+      "github": "https://github.com/farhan10904/ESP32-Self-Levelling-Gimbal",
+      "medium": "",
+      "report": "",
+      "image": "https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/Diagonal.png",
+      "details": []
     },
     {
-      id: "robot", title: "Surgical instrument carrier robot", category: "software",
-      sidebarTitle: "Surgical instrument carrier robot", featured: true, visible: true, ready: true,
-      page: "projects/robot.html", accent: "sky", label: "ROBOTICS / SOFTWARE",
-      summary: "Embedded navigation and instrument-delivery software for an eight-person university robotics project.",
-      technologies: "Arduino · C/C++ · IR sensing · Ultrasonic sensing",
-      github: "https://github.com/farhan10904/Surgical-Instrument-Carrier-Robot",
-      medium: "", report: "", image: "https://raw.githubusercontent.com/farhan10904/Surgical-Instrument-Carrier-Robot/main/images/Overview.jpg", details: []
+      "id": "robot",
+      "title": "Surgical instrument carrier robot",
+      "category": "software",
+      "sidebarTitle": "Surgical instrument carrier robot",
+      "featured": true,
+      "visible": true,
+      "ready": true,
+      "page": "projects/robot.html",
+      "accent": "sky",
+      "label": "ROBOTICS / SOFTWARE",
+      "summary": "Embedded navigation and instrument-delivery software for an eight-person university robotics project.",
+      "technologies": "Arduino · C/C++ · IR sensing · Ultrasonic sensing",
+      "github": "https://github.com/farhan10904/Surgical-Instrument-Carrier-Robot",
+      "medium": "",
+      "report": "",
+      "image": "https://raw.githubusercontent.com/farhan10904/Surgical-Instrument-Carrier-Robot/main/images/Overview.jpg",
+      "details": []
     },
     {
-      id: "brayton", title: "Brayton-cycle gas turbine simulator", category: "simulation",
-      sidebarTitle: "Brayton-cycle simulator", featured: true, visible: true, ready: true,
-      page: "projects/brayton.html", accent: "amber", label: "ENERGY / SIMULATION",
-      summary: "Python gas turbine model comparing ideal and real Brayton cycles with pressure-ratio sweeps, exergy analysis and saved performance results.",
-      technologies: "Python · NumPy · Pandas · Matplotlib · Thermodynamics",
-      github: "https://github.com/farhan10904/Brayton-Cycle-Turbine-Simulator",
-      medium: "", report: "", image: "https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Power_vs_Pressure_Ratio.png", details: []
+      "id": "brayton",
+      "title": "Brayton-cycle gas turbine simulator",
+      "category": "simulation",
+      "sidebarTitle": "Brayton-cycle simulator",
+      "featured": true,
+      "visible": true,
+      "ready": true,
+      "page": "projects/brayton.html",
+      "accent": "amber",
+      "label": "ENERGY / SIMULATION",
+      "summary": "Python gas turbine model comparing ideal and real Brayton cycles with pressure-ratio sweeps, exergy analysis and saved performance results.",
+      "technologies": "Python · NumPy · Pandas · Matplotlib · Thermodynamics",
+      "github": "https://github.com/farhan10904/Brayton-Cycle-Turbine-Simulator",
+      "medium": "",
+      "report": "",
+      "image": "https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Power_vs_Pressure_Ratio.png",
+      "details": []
     },
     {
-      id: "radar", title: "ESP32 ultrasonic radar scanner", category: "embedded",
-      sidebarTitle: "Radar scanner", featured: true, visible: true, ready: true,
-      page: "projects/radar.html", accent: "violet", label: "SENSING / EMBEDDED",
-      summary: "Built and tested an ESP32 ultrasonic scanner with 180° servo sweep, OLED readout and live Wi-Fi radar dashboard.",
-      technologies: "ESP32 · HC-SR04 · SG90 · OLED · MT3608 · Wi-Fi",
-      github: "https://github.com/farhan10904/ESP32_Radar_Scanner",
-      medium: "", report: "", image: "https://raw.githubusercontent.com/farhan10904/ESP32_Radar_Scanner/main/docs/images/Actual%20Dashboard.png", details: []
+      "id": "radar",
+      "title": "ESP32 ultrasonic radar scanner",
+      "category": "embedded",
+      "sidebarTitle": "Radar scanner",
+      "featured": true,
+      "visible": true,
+      "ready": true,
+      "page": "projects/radar.html",
+      "accent": "violet",
+      "label": "SENSING / EMBEDDED",
+      "summary": "Built and tested an ESP32 ultrasonic scanner with 180° servo sweep, OLED readout and live Wi-Fi radar dashboard.",
+      "technologies": "ESP32 · HC-SR04 · SG90 · OLED · MT3608 · Wi-Fi",
+      "github": "https://github.com/farhan10904/ESP32_Radar_Scanner",
+      "medium": "",
+      "report": "",
+      "image": "https://raw.githubusercontent.com/farhan10904/ESP32_Radar_Scanner/main/docs/images/Actual%20Dashboard.png",
+      "details": []
     },
-    // Smaller case studies and learning exercises, imported from the Notion export.
-    // Add/edit these entries to change the site-wide archive and individual pages.
     {
       "id": "gimbal-frame",
       "title": "Fusion 360 gimbal frame and electronics enclosure",
@@ -149,71 +199,97 @@ window.FARHAN_PORTFOLIO = {
       "category": "cad",
       "sidebarTitle": "Clutch assembly",
       "type": "University SolidWorks coursework",
-      "summary": "Parametric SolidWorks model of a single-plate clutch, including the friction disc, pressure plate, flywheel, diaphragm spring, assembly mates and engineering drawings.",
+      "summary": "Parametric SolidWorks assembly of a single-plate automotive clutch with roughly 40 components, constrained rotational relationships, sectional views, an exploded drawing and BOM.",
       "technologies": "SolidWorks · Assembly mates · Engineering drawings · BOM",
       "facts": [
         {
           "value": "~40",
-          "label": "Modelled and assembly components"
+          "label": "Modelled and standard components"
         },
         {
-          "value": "SolidWorks",
-          "label": "Parametric CAD"
+          "value": "Fully mated",
+          "label": "Concentricity and rotational freedom"
+        },
+        {
+          "value": "Section views",
+          "label": "Internal component inspection"
         },
         {
           "value": "BOM",
-          "label": "Exploded drawing and part callouts"
+          "label": "Exploded technical drawing"
         }
       ],
       "sections": [
         {
-          "heading": "System and modelling approach",
+          "heading": "Design brief and engineering objective",
           "paragraphs": [
-            "The clutch assembly was constructed from individual components, including the flywheel, friction disc, pressure plate, diaphragm spring and housing. Major structural components were modelled, while standard hardware was sourced from the SolidWorks library."
+            "This university CAD coursework recreated the component structure of a single-plate automotive friction clutch in SolidWorks. The objective was to represent the physical arrangement of the flywheel, friction disc, pressure plate, diaphragm spring, housing and standard fasteners in a single constrained mechanical assembly.",
+            "Approximately 40 parts were used. I modelled the major structural components from scratch and used SolidWorks library items for standard hardware rather than creating unnecessary duplicate bolt and washer geometry."
           ],
           "images": [
             {
               "src": "assets/images/archive/clutch-assembly.png",
-              "caption": "Assembly view of the clutch model",
-              "alt": "Assembly view of the clutch model"
+              "caption": "Complete SolidWorks clutch assembly",
+              "alt": "Assembled single-plate automotive clutch model"
             }
           ]
         },
         {
-          "heading": "Assembly constraints",
+          "heading": "Part modelling and mechanical interfaces",
           "paragraphs": [
-            "Mechanical mates controlled concentric positioning of the friction disc and flywheel while constraining unwanted axial motion. The aim was a mechanically representative assembled model, not a measured clutch torque-capacity prediction."
+            "Parts were designed individually before assembly. The friction disc sits between the flywheel and pressure-plate surfaces; the diaphragm spring and housing establish the surrounding compression mechanism.",
+            "The design work emphasised fit, component alignment and assembly structure. It did not calculate dynamic engagement torque, friction heating or detailed material failure life."
+          ],
+          "bullets": [
+            "Individual flywheel, clutch disc, pressure plate and diaphragm spring models",
+            "Housing and standard fasteners assembled into a compact mechanism",
+            "Component dimensions checked in the context of the complete assembly"
+          ]
+        },
+        {
+          "heading": "Mates and rotational constraints",
+          "paragraphs": [
+            "Concentric mates were used to align the flywheel, friction disc and related rotating features along a common axis. Other mates restricted unwanted relative displacement while retaining the intended degrees of rotational motion.",
+            "Fully constraining an assembly requires distinguishing geometry that must remain fixed from parts that need to rotate or translate. This was a central technical task in the coursework rather than simply positioning shapes for a render."
+          ]
+        },
+        {
+          "heading": "Section-view verification",
+          "paragraphs": [
+            "Sectional geometry was used to inspect component order, axial clearance and the relationship between friction surfaces, diaphragm spring and housing. This provides a more meaningful check than an exterior render because interference and assembly orientation are visible."
           ],
           "images": [
             {
               "src": "assets/images/archive/clutch-section.png",
-              "caption": "Sectioned assembly showing the internal component arrangement",
-              "alt": "Sectioned assembly showing the internal component arrangement"
+              "caption": "Internal clutch components shown in section view",
+              "alt": "Section of SolidWorks clutch showing pressure plate, disc and surrounding components"
             }
           ]
         },
         {
-          "heading": "Manufacturing documentation",
+          "heading": "Exploded assembly and production documentation",
           "paragraphs": [
-            "The coursework included an exploded visualisation and an engineering drawing with title block, balloon callouts and a bill of materials. These outputs communicate component identity and assembly relationships."
+            "An exploded view communicates how separate parts occupy their positions in the assembled system and helps explain the assembly sequence.",
+            "The final engineering drawing includes a title block, labelled component balloons and a bill of materials. The drawing supports manufacturing communication and component identification; it is not an inspection record or a verified manufacturing process plan."
           ],
           "images": [
             {
               "src": "assets/images/archive/clutch-exploded.png",
-              "caption": "Exploded SolidWorks assembly",
-              "alt": "Exploded SolidWorks assembly"
+              "caption": "Exploded view revealing the component arrangement",
+              "alt": "Exploded automotive clutch SolidWorks CAD assembly"
             },
             {
               "src": "assets/images/archive/clutch-drawing.png",
-              "caption": "Engineering drawing and bill of materials",
-              "alt": "Engineering drawing and bill of materials"
+              "caption": "Engineering assembly drawing with balloons and bill of materials",
+              "alt": "Clutch mechanical engineering drawing"
             }
           ]
         },
         {
-          "heading": "Verification boundary",
+          "heading": "Outcomes, evidence and further validation",
           "paragraphs": [
-            "The original portfolio documents assembled geometry, mate configuration and drawings. It does not provide tested engagement torque, fatigue life, friction performance or prototype validation; none of those are claimed."
+            "The documented outcome is a constrained parametric CAD assembly with section, exploded and engineering drawing outputs. This establishes experience with parts, mates, subassembly reasoning and technical drawings.",
+            "The original material does not include physical manufacture, torque transmission testing, engagement force calculations, thermal analysis or fatigue validation. Future work could estimate clamp force, slip energy and required friction area using measured or sourced material properties."
           ]
         }
       ],
@@ -525,75 +601,129 @@ window.FARHAN_PORTFOLIO = {
       "title": "Algorithmic trading backtesting system",
       "category": "software",
       "type": "Independent Python software project",
-      "summary": "Modular Python backtesting pipeline for historical market data, moving-average signals, execution simulation, risk parameters and structured trade logging.",
-      "technologies": "Python · Pandas · NumPy · YFinance · Backtesting",
+      "summary": "Python data-to-backtest pipeline for 11-equity historical analysis, MA10/MA50 signals, risk rules, transaction-cost assumptions and recorded trades.",
+      "technologies": "Python · Pandas · NumPy · yfinance · Alpha Vantage · Backtesting",
       "github": "https://github.com/farhan10904/Algorithmic-Trading-System",
       "facts": [
         {
-          "value": "8 modules",
-          "label": "Reported Python components"
+          "value": "8 files",
+          "label": "Main, config and six modules"
         },
         {
-          "value": "MA10/MA50",
-          "label": "Signal strategy in Notion"
+          "value": "MA10 / MA50",
+          "label": "Configurable signal generation"
         },
         {
-          "value": "11 equities",
-          "label": "Reported historical-test universe"
+          "value": "5%",
+          "label": "Configured trade allocation"
         },
         {
-          "value": "Costs",
-          "label": "Slippage and fees considered"
+          "value": "CSV logs",
+          "label": "Trade-level and summary exports"
         }
       ],
       "sections": [
         {
-          "heading": "Pipeline architecture",
+          "heading": "Engineering problem and scope",
           "paragraphs": [
-            "The system separates market-data ingestion, indicators, signal generation, simulated execution and logging. A central configuration file controls instrument lists, indicator windows, timeframes and risk parameters.",
-            "The Notion portfolio describes API data through Alpha Vantage and YFinance; the current GitHub README specifically describes YFinance. The live repository should be treated as the authoritative source for current code behaviour."
+            "I developed a modular Python pipeline to evaluate rule-based equity strategies using historical price data. Rather than placing live trades, the system downloads and prepares data, calculates indicators, generates position signals, simulates exits and transaction costs, and exports a traceable log for subsequent analysis.",
+            "The original development report describes tests on 11 equities, including AAPL, NVDA and TSLA. The system was structured to keep data handling, strategy logic, execution rules and reporting separate, so changes to a strategy did not require rewriting the entire workflow."
           ],
           "images": [
             {
               "src": "assets/images/archive/trading-architecture.png",
-              "caption": "Original project architecture screenshot",
-              "alt": "Original project architecture screenshot"
+              "caption": "Original software architecture from the development portfolio",
+              "alt": "Python backtesting system module architecture"
             },
             {
               "src": "assets/images/archive/trading-module-structure.png",
-              "caption": "Project modules and data-folder organisation",
-              "alt": "Project modules and data-folder organisation"
+              "caption": "Repository organisation: data, modules, scripts and logs",
+              "alt": "Python project file and folder structure"
             }
           ]
         },
         {
-          "heading": "Signal generation and execution",
+          "heading": "Modular software architecture",
           "paragraphs": [
-            "The documented strategy compares fast and slow moving averages to assign long (+1) or short (−1) signals. The backtester models trade entry and exit, stop-loss/take-profit settings, slippage and transaction fees."
+            "The committed repository has project/Main.py as the command-line launcher, project/config.py for parameters and six modules: price_fetcher.py, indicators.py, strategy.py, backtest.py, runner.py and utils.py. The runner coordinates bulk downloads, feature generation, backtests and CSV output.",
+            "The launcher presents options for price alerts, backtests, analysis preparation, trade exports, historical downloads and profit summaries. The real-time price-alert utility uses an independent price threshold; it should not be confused with the MA10/MA50 backtest strategy."
           ],
           "bullets": [
-            "Signal: MA10 > MA50 gives +1; MA10 < MA50 gives −1 in the Notion description",
-            "Example configuration in Notion: 5% position sizing and 2% stop loss",
-            "Trade logs record direction, entry, exit and simulated profit/loss"
+            "Data acquisition - Alpha Vantage for price quotes and yfinance for historical OHLC data",
+            "Feature calculation - rolling MA10/MA50, price percentage change and trend direction",
+            "Signal generation - assign long (+1) or short (-1) states from moving-average comparison",
+            "Backtesting - process entries, exits, stop-loss/take-profit events and costs",
+            "Reporting - per-symbol trade logs, aggregate transaction CSVs and profit summaries"
+          ]
+        },
+        {
+          "heading": "Historical data and indicators",
+          "paragraphs": [
+            "Historical data is downloaded per symbol and written to structured folders such as project/data/Hourly/ and project/data/Daily/. The current configuration requests hourly data and provides a fixed-date option and a rolling historical-period option.",
+            "The indicator module uses pandas rolling means to generate MA10 and MA50, percentage changes between prices and a trend indicator from the MA50 change. Analysis files contain the source prices, calculated features, raw Signal values and carried Position values.",
+            "The code does not establish that every requested date range is available at every sampling interval from yfinance; provider retention limits need to be checked when reproducing runs."
+          ]
+        },
+        {
+          "heading": "Moving-average strategy and position state",
+          "paragraphs": [
+            "The strategy compares the fast and slow averages at each timestamp. MA10 greater than MA50 assigns +1 (long), MA10 less than MA50 assigns -1 (short), and equal averages assign zero. A separate position-building function carries the latest nonzero direction forward.",
+            "This is a simple trend-following baseline, not a machine-learning prediction model. The moving-average windows are declared in the configuration file so they can be changed without editing the signal-generation function."
           ],
+          "code": {
+            "language": "python",
+            "caption": "Source function: project/modules/strategy.py (Fast_MA and Slow_MA are imported from config.py)",
+            "text": "def generate_signals(df):\n    \"\"\"\n    generate_signals - generates +1, 0, -1 signals based\n    on Fast_MA and Slow_MA crossovers\n    \"\"\"\n    df[\"Signal\"] = 0\n    \n    df.loc[df[Fast_MA] > df[Slow_MA], \"Signal\"] = 1\n    df.loc[df[Fast_MA] < df[Slow_MA], \"Signal\"] = -1\n    \n    return df"
+          },
           "images": [
             {
               "src": "assets/images/archive/trading-signals.png",
-              "caption": "Moving-average crossover strategy visualisation",
-              "alt": "Moving-average crossover strategy visualisation"
-            },
-            {
-              "src": "assets/images/archive/trading-trade-logs.png",
-              "caption": "CSV transaction log from the project",
-              "alt": "CSV transaction log from the project"
+              "caption": "Original MA10/MA50 strategy visualisation",
+              "alt": "Market data and moving average crossover strategy"
             }
           ]
         },
         {
-          "heading": "Reported results and uncertainty",
+          "heading": "Execution simulation and risk parameters",
           "paragraphs": [
-            "The Notion portfolio reports approximately 30–40% win rate across historical tests. The GitHub README includes a separate illustrative output with a different win rate. Without a specified run configuration and reproducible log, these figures should not be treated as a verified strategy benchmark.",
-            "This is a software and simulation project, not evidence of successful live trading or a profitable investment strategy."
+            "The backtester iterates chronologically through prepared price rows, opening or closing long/short positions when the recorded direction changes. It also implements percentage-based stop-loss and take-profit exits and closes remaining open trades at the end of the test data.",
+            "In the committed configuration, a trade allocates 5% of the available simulated balance. Stop loss is configured at -2%, take profit at +2%, slippage at 0.0005 (0.05%), fixed fee at 0.1 and percentage fee at 0.001 (0.1%). These are simulation settings, not exchange quotes or measured execution costs."
+          ],
+          "bullets": [
+            "Position size - balance × risk_per_trade, converted into simulated share quantity",
+            "Transaction prices - modified using configured slippage on entry/exit",
+            "Exit conditions - stop-loss, take-profit, direction change or final sample",
+            "Trade log - symbol, entry/exit timestamps and prices, direction and simulated profit"
+          ]
+        },
+        {
+          "heading": "Logging and result interpretation",
+          "paragraphs": [
+            "The source exports individual symbol trade logs and a combined transactions file. A profit-summary routine aggregates total profit, win rate, average win/loss and largest profit/loss into text and CSV summaries.",
+            "The original portfolio reported approximately 30–40% win rate on particular historical tests, but no matching run configuration, dated input dataset and complete test log were included with that statement. The repository README gives a different illustrative result. Neither should be represented as a verified, reproducible performance benchmark.",
+            "A win rate alone is insufficient to assess a strategy: average win, average loss, costs, drawdown and the number and timing of trades matter."
+          ],
+          "images": [
+            {
+              "src": "assets/images/archive/trading-trade-logs.png",
+              "caption": "Original structured trading transaction log",
+              "alt": "Saved trade CSV with entry, exit and profit fields"
+            }
+          ]
+        },
+        {
+          "heading": "Engineering review and limitations",
+          "paragraphs": [
+            "The value of this project is in its modular Python architecture and ability to inspect individual simulated decisions. It is not proof of profitable trading. Further validation should include a frozen historical dataset, parameter and run-date metadata, automated tests, benchmark comparisons and a reproducible command to regenerate all results.",
+            "The current backtesting implementation should be reviewed for potential same-bar signal/execution bias and the consistent application of transaction fees to quantity before making stronger performance claims. A walk-forward or out-of-sample evaluation would be a useful next step.",
+            "The real-time price-alert option simply compares the latest price with a threshold; it is separate from the moving-average backtest."
+          ],
+          "bullets": [
+            "Add unit tests for long/short transitions and stop-loss/take-profit events",
+            "Verify position accounting, fees, slippage and end-of-test liquidation",
+            "Enforce next-bar execution after a signal is generated",
+            "Save an exact data snapshot, code version and config for each reported run",
+            "Add equity curves, maximum drawdown and a passive benchmark"
           ]
         }
       ],
@@ -933,6 +1063,5 @@ window.FARHAN_PORTFOLIO = {
       "medium": "",
       "report": ""
     }
-
   ]
 };
