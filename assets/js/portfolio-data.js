@@ -27,7 +27,7 @@ window.FARHAN_PORTFOLIO = {
       summary: "Embedded navigation and instrument-delivery software for an eight-person university robotics project.",
       technologies: "Arduino · C/C++ · IR sensing · Ultrasonic sensing",
       github: "https://github.com/farhan10904/Surgical-Instrument-Carrier-Robot",
-      medium: "", report: "", image: "", details: []
+      medium: "", report: "", image: "https://raw.githubusercontent.com/farhan10904/Surgical-Instrument-Carrier-Robot/main/images/Overview.jpg", details: []
     },
     {
       id: "brayton", title: "Brayton-cycle gas turbine simulator", category: "simulation",
