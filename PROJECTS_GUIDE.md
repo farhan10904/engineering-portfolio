@@ -82,3 +82,26 @@ For a custom HTML project page, put each image inside a `<figure>` with an optio
 For a new catalogue-generated project, supply `image` in `portfolio-data.js`; it will be expandable automatically.
 The shared script is `assets/js/project-image-expand.js`; you do not need to add links by hand.
 Featured homepage thumbnails continue to open their corresponding project pages.
+
+
+## Reusable pages for smaller projects
+
+The imported archive case studies now use a single page (`project.html?id=PROJECT_ID`). No separate HTML file is required. Edit the project's entry in `assets/js/portfolio-data.js` to change any of these:
+
+- `type`: accurate project type (e.g. university coursework, independent build, training)
+- `summary`, `technologies`: introductory text
+- `facts`: small key-value summary cards (`value` and `label`)
+- `sections`: ordered case-study sections. Each supports `heading`, `paragraphs` (array of strings), `bullets` (array of strings) and `images` (array of `{src, caption, alt}`)
+- `github`, `medium`, `report`: optional links, displayed only when present
+
+There is no need to duplicate navigation links or change the page layout. Any source figure in a `sections[].images` array automatically gains an Expand link.
+
+### Notion archive image upload (one-time)
+
+The additional project pictures are packaged in `portfolio_additional_images.zip`. Extract it and upload its `assets/images/archive/` images into **the exact same folder path** in the GitHub repository on `main`. Keep the provided filenames unchanged.
+
+Before the files are uploaded, the new text pages remain accessible; any unavailable images are hidden instead of displaying broken-image icons. Once uploaded, the original figures appear automatically.
+
+## Avoid duplication
+
+The Wokwi gimbal and radar simulations are explicitly labelled development stages of the larger physical projects, not separate completed hardware builds. The CAD and PCB subprojects link to the associated full gimbal repository. Use `featured: false` for these smaller entries.
