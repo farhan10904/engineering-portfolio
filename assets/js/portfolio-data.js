@@ -357,7 +357,7 @@ window.FARHAN_PORTFOLIO = {
               "alt": "3D view of the routed ESP32 carrier"
             },
             {
-              "src": "https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/KiCad_PCB_Editor_Close_Up.png",
+              "src": "assets/images/archive/gimbal-pcb-layout.png",
               "caption": "KiCad PCB editor routed layout",
               "alt": "KiCad PCB editor routed layout"
             }
