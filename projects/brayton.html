@@ -5,17 +5,126 @@
 <meta name="theme-color" content="#0b1220" />
 <title>Brayton-cycle gas turbine simulator | Farhan Ali</title><meta name="description" content="A numerical tool comparing ideal and non-ideal Brayton cycles, highlighting the trade-off between net power and thermal efficiency." />
 <script>(function(){try{var t=localStorage.getItem('farhan-portfolio-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<link rel="stylesheet" href="../assets/css/main.css" /><link rel="stylesheet" href="../assets/css/portfolio.css" />
+<link rel="stylesheet" href="../assets/css/main.css" /><link rel="stylesheet" href="../assets/css/portfolio.css?v=brayton-data-20261009" />
 </head><body class="is-preload"><div id="wrapper"><div id="main"><div class="inner">
 <header id="header"><a href="../index.html" class="logo"><strong>Farhan Ali</strong> / Engineering Portfolio</a>
      <ul class="top-links"><li><a href="https://github.com/farhan10904" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li><li><a href="https://medium.com/@farhan10904" target="_blank" rel="noopener noreferrer">Medium ↗</a></li><li><a href="https://www.linkedin.com/in/farhan-ali-95047a245/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li></ul></header>
+
 <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="../index.html#featured">Featured projects</a><span>/</span><span>Brayton-cycle gas turbine simulator</span></div>
-    <section class="case-hero"><p class="eyebrow">ENERGY / SIMULATION · 2026</p><h1>Brayton-cycle gas turbine simulator</h1><p class="case-lede">A numerical tool comparing ideal and non-ideal Brayton cycles, highlighting the trade-off between net power and thermal efficiency.</p><div class="case-art accent-amber"><svg class="art-svg" role="img" aria-label="Stylised technical illustration for this project, not a prototype photograph" viewBox="0 0 600 335" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="g" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="currentColor" stroke-opacity=".12" stroke-width="1"/></pattern></defs><rect width="600" height="335" fill="url(#g)" /><g font-family="monospace" font-size="13" letter-spacing="1.2" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M96 250V92M96 250h420" opacity=".45"/><path d="M117 240Q195 218 240 145T395 125T505 196"/><path d="M117 240Q220 185 327 170T505 160" opacity=".62" stroke-dasharray="8 8"/><path d="M240 145V250M395 125V250" opacity=".35" stroke-dasharray="6 6"/><circle cx="395" cy="125" r="8" fill="currentColor"/><circle cx="327" cy="170" r="6" fill="currentColor"/></g><text x="35" y="45">BRAYTON CYCLE / PERFORMANCE</text><text x="385" y="305">PRESSURE RATIO →</text></g></svg></div>
-     <div class="case-meta"><div><span>PROJECT TYPE</span><b>Personal project</b></div><div><span>TOOLS & TECHNOLOGIES</span><b>Python · NumPy · Pandas · Matplotlib</b></div><div><span>STATUS</span><b>Computational model and parameter sweeps completed</b></div></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">ENGINEERING RECORD</p><h2>Design and implementation</h2></div></div><div class="case-points"><article><span class="case-num">01</span><div><h3>Model assumptions</h3><p>Implemented compressor efficiency of 85%, turbine efficiency of 90% and combustor pressure loss of 5% in the non-ideal cycle.</p></div></article><article><span class="case-num">02</span><div><h3>Parametric study</h3><p>Swept pressure ratios from 2 to 50 and turbine inlet temperatures from 1400 to 1800 K, calculating net output and first- and second-law efficiencies.</p></div></article><article><span class="case-num">03</span><div><h3>Power optimum</h3><p>At 10 kg/s, the real-cycle model found a maximum net power of 2.73 MW at pressure ratio 10.</p></div></article><article><span class="case-num">04</span><div><h3>Efficiency optimum</h3><p>The maximum thermal efficiency was 38.7% at pressure ratio 23, with 49.2% second-law efficiency at that point.</p></div></article></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">VERIFICATION</p><h2>Evidence and limitations</h2></div></div><div class="evidence-panel"><p>Figures are model outputs under specified assumptions, not measurements from a physical gas turbine. Original plots and source code should be attached before the report is presented as complete.</p><p class="evidence-next"><strong>Next evidence to add:</strong> Add code-based plots, sensitivity analysis, governing equations and a clear discussion of the assumptions.</p></div></section>
-    <section class="case-section"><div class="section-header"><div><p class="eyebrow">SOURCE & DOCUMENTATION</p><h2>Explore the project</h2></div></div><p>The linked repository contains the available source materials. Original project photographs, diagrams and a full technical report will be integrated here as the case study is expanded.</p><div class="hero-actions"><a href="https://github.com/farhan10904/Brayton-Cycle-Turbine-Simulator" target="_blank" rel="noopener noreferrer" class="button primary">Open GitHub repository ↗</a><a href="../index.html#featured" class="button outline">Back to projects</a></div></section>
-</div></div><div id="sidebar"><div class="inner">
+<section class="case-hero">
+  <p class="eyebrow">THERMODYNAMICS / PYTHON / EXERGY ANALYSIS · INDEPENDENT PROJECT</p>
+  <h1>Brayton-cycle gas turbine simulator</h1>
+  <p class="case-lede">A Python simulation comparing ideal-component and non-ideal Brayton gas turbine cycles. The model uses compressor and turbine efficiencies, combustor pressure loss and energy/exergy balances to examine how pressure ratio and turbine inlet temperature change predicted performance.</p>
+  <figure class="brayton-main-plot"><a href="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Power_vs_Pressure_Ratio.png" target="_blank" rel="noopener noreferrer" title="Open full-sized power-versus-pressure-ratio plot"><img src="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Power_vs_Pressure_Ratio.png" alt="Saved Python plot comparing net power versus pressure ratio for ideal and real cycle models" loading="eager"/></a><figcaption>Saved model output - net power as a function of compressor pressure ratio. <a href="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Power_vs_Pressure_Ratio.png" target="_blank" rel="noopener noreferrer">View full graph ↗</a></figcaption></figure>
+  <div class="case-meta">
+    <div><span>MODEL</span><b>Ideal-component and real-component air-standard Brayton cycle</b></div>
+    <div><span>TOOLS</span><b>Python · NumPy · Pandas · Matplotlib</b></div>
+    <div><span>EVIDENCE</span><b>Source code · parameter sweeps · CSV summaries · saved graphs</b></div>
+  </div>
+</section>
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">01 / OBJECTIVE</p><h2>From textbook thermodynamics to design trade-offs</h2></div></div>
+  <p>The aim was to quantify how departures from ideal compression and expansion affect predicted net shaft power, first-law thermal efficiency and second-law performance. Separate pressure-ratio and turbine-inlet-temperature sweeps were implemented to identify different operating points for maximum power and efficiency.</p>
+  <div class="brayton-metrics">
+    <div><strong>2–50</strong><span>Pressure-ratio sweep, increments of 1</span></div>
+    <div><strong>1400–1800 K</strong><span>Turbine-inlet-temperature sweep, 50 K increments</span></div>
+    <div><strong>10 kg/s</strong><span>Fixed working-fluid mass flow rate</span></div>
+    <div><strong>5%</strong><span>Combustor pressure loss in current configuration</span></div>
+  </div>
+  <p><strong>Model scope:</strong> A simplified steady-state air-standard cycle with constant specific heat and heat-capacity ratio. It is a conceptual design calculation, not an experimentally validated gas turbine or a manufacturer performance map.</p>
+</section>
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">02 / SYSTEM MODEL</p><h2>Four thermodynamic states, two component models</h2></div></div>
+  <div class="brayton-flow">
+    <div><span>1 → 2</span><strong>Compression</strong><p>Air temperature and pressure rise through the compressor; real outlet temperature accounts for η<sub>c</sub>.</p></div>
+    <div><span>2 → 3</span><strong>Heat addition</strong><p>Working-fluid temperature increases to the specified TIT; the model applies combustor pressure loss.</p></div>
+    <div><span>3 → 4</span><strong>Expansion</strong><p>The turbine delivers shaft work; actual outlet temperature depends on η<sub>t</sub> and expansion pressure ratio.</p></div>
+    <div><span>4 → 1</span><strong>Cycle closure</strong><p>Heat rejection is represented through the air-standard cycle idealisation.</p></div>
+  </div>
+  <div class="brayton-parameter-wrap"><table class="robot-component-table"><thead><tr><th>Input</th><th>Configuration</th><th>Meaning</th></tr></thead><tbody>
+    <tr><td>T<sub>1</sub> / P<sub>1</sub></td><td>298.15 K / 100,000 Pa</td><td>Compressor inlet conditions</td></tr>
+    <tr><td>T<sub>3</sub></td><td>1400 K baseline</td><td>Turbine inlet temperature</td></tr>
+    <tr><td>γ / C<sub>p</sub> / R</td><td>1.4 / 1005 J kg<sup>−1</sup> K<sup>−1</sup> / 287 J kg<sup>−1</sup> K<sup>−1</sup></td><td>Constant air-property assumptions</td></tr>
+    <tr><td>η<sub>c</sub> / η<sub>t</sub></td><td>0.85 / 0.90</td><td>Compressor / turbine isentropic efficiencies in real model</td></tr>
+    <tr><td>ΔP<sub>combustor</sub></td><td>5%</td><td>Pressure loss is applied in both comparison models</td></tr>
+    <tr><td>T<sub>0</sub></td><td>300 K</td><td>Exergy reference temperature</td></tr>
+  </tbody></table></div>
+  <p>The repository calls its first case the <em>ideal</em> cycle. More precisely, its compressor and turbine are isentropic but it retains the configured 5% combustor pressure loss. It is therefore not a completely loss-free textbook Brayton cycle.</p>
+</section>
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">03 / GOVERNING EQUATIONS</p><h2>Compression, expansion and cycle efficiency</h2></div></div>
+  <div class="brayton-equations">
+    <div><span>Isentropic compressor</span><p>T<sub>2s</sub> = T<sub>1</sub> · PR<sup>(γ−1)/γ</sup></p></div>
+    <div><span>Real compressor</span><p>T<sub>2</sub> = T<sub>1</sub> + (T<sub>2s</sub> − T<sub>1</sub>) / η<sub>c</sub></p></div>
+    <div><span>Real turbine</span><p>T<sub>4</sub> = T<sub>3</sub> − η<sub>t</sub>(T<sub>3</sub> − T<sub>4s</sub>)</p></div>
+    <div><span>Net specific work</span><p>w<sub>net</sub> = C<sub>p</sub>[(T<sub>3</sub> − T<sub>4</sub>) − (T<sub>2</sub> − T<sub>1</sub>)]</p></div>
+    <div><span>Thermal efficiency</span><p>η<sub>th</sub> = w<sub>net</sub> / [C<sub>p</sub>(T<sub>3</sub> − T<sub>2</sub>)]</p></div>
+    <div><span>Exergy destruction</span><p>Ė<sub>D</sub> = T<sub>0</sub> Ṡ<sub>gen</sub></p></div>
+  </div>
+  <p>The code calculates compressor and turbine entropy changes using constant-property ideal-gas relations and applies the Gouy-Stodola relationship to calculate their exergy destruction. Its second-law efficiency uses the simplified heat-exergy approximation Q<sub>in</sub>(1 − T<sub>0</sub>/T<sub>3</sub>), not detailed fuel chemical exergy.</p>
+</section>
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">04 / PARAMETRIC RESULTS</p><h2>Maximum net power is not maximum efficiency</h2></div></div>
+  <p>The committed <code>Results/cycle_optima_summary.csv</code> reports these model outcomes for the saved configuration:</p>
+  <div class="brayton-results-wrap"><table class="robot-component-table brayton-results"><thead><tr><th>Case</th><th>Optimised quantity</th><th>PR</th><th>Net power</th><th>Thermal efficiency</th></tr></thead><tbody>
+    <tr><td>Ideal-component case</td><td>Maximum net power</td><td>15</td><td>3.98 MW</td><td>52.61%</td></tr>
+    <tr><td>Real-component case</td><td>Maximum net power</td><td>10</td><td>2.73 MW</td><td>34.99%</td></tr>
+    <tr><td>Ideal-component case</td><td>Maximum thermal efficiency*</td><td>50</td><td>3.23 MW</td><td>65.91%</td></tr>
+    <tr><td>Real-component case</td><td>Maximum thermal efficiency</td><td>23</td><td>2.31 MW</td><td>38.69%</td></tr>
+  </tbody></table></div>
+  <p><small>*The ideal-component efficiency rises to its highest recorded value at the upper sweep boundary PR = 50. This is a boundary result, not proof of a finite interior optimum.</small></p>
+  <div class="brayton-figure-grid">
+    <figure><a href="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Net_Work_vs_Pressure_Ratio_Comparison.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Net_Work_vs_Pressure_Ratio_Comparison.png" alt="Saved ideal and real net-specific-work comparison by pressure ratio" loading="lazy"/></a><figcaption>Specific net work against pressure ratio - <a href="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Net_Work_vs_Pressure_Ratio_Comparison.png" target="_blank" rel="noopener noreferrer">expand ↗</a></figcaption></figure>
+    <figure><a href="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Thermal_Efficiency_vs_Turbine_Inlet_Temperature_Comparison.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Thermal_Efficiency_vs_Turbine_Inlet_Temperature_Comparison.png" alt="Saved thermal efficiency versus turbine inlet temperature for both cycle models" loading="lazy"/></a><figcaption>Thermal efficiency against turbine inlet temperature - <a href="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Thermal_Efficiency_vs_Turbine_Inlet_Temperature_Comparison.png" target="_blank" rel="noopener noreferrer">expand ↗</a></figcaption></figure>
+  </div>
+  <div class="case-points">
+    <article><span class="case-num">01</span><div><h3>Power optimum shifts earlier</h3><p>In the saved sweep, component inefficiencies and pressure losses move the modelled maximum power from PR 15 to PR 10.</p></div></article>
+    <article><span class="case-num">02</span><div><h3>Efficiency has a different optimum</h3><p>Real-model thermal efficiency peaks at PR 23, where net power is lower than at PR 10. The choice depends on the design objective.</p></div></article>
+    <article><span class="case-num">03</span><div><h3>Increasing compressor work</h3><p>Higher pressure ratios increase compressor outlet temperature and specific compressor work, eventually eroding the power benefit of expansion.</p></div></article>
+    <article><span class="case-num">04</span><div><h3>Turbine inlet temperature</h3><p>The separate TIT sweep explores 1400–1800 K. The Notion summary reports modest real-cycle efficiency gains, whereas the ideal-component efficiency is insensitive to TIT for fixed PR under the model assumptions.</p></div></article>
+  </div>
+</section>
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">05 / SECOND-LAW ANALYSIS</p><h2>Exergy destruction and usable work</h2></div></div>
+  <p>The simulation estimates component-level entropy generation and exergy destruction in the compressor and turbine, then compares the net work output with a simplified heat-exergy input expression.</p>
+  <div class="brayton-metrics">
+    <div><strong>49.24%</strong><span>Highest recorded real-model second-law efficiency (PR 23)</span></div>
+    <div><strong>83.89%</strong><span>Highest recorded ideal-component second-law efficiency (PR 50 boundary)</span></div>
+    <div><strong>PR 23</strong><span>Real-model peak thermal and second-law efficiencies</span></div>
+    <div><strong>T<sub>0</sub> = 300 K</strong><span>Ambient reference for exergy destruction</span></div>
+  </div>
+  <div class="brayton-figure-grid">
+    <figure><a href="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Second_Law_Efficiency_vs_Pressure_Ratio_Comparison.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Second_Law_Efficiency_vs_Pressure_Ratio_Comparison.png" alt="Saved second law efficiency comparison between ideal and real Brayton models" loading="lazy"/></a><figcaption>Second-law efficiency across PR - <a href="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Second_Law_Efficiency_vs_Pressure_Ratio_Comparison.png" target="_blank" rel="noopener noreferrer">expand ↗</a></figcaption></figure>
+    <figure><a href="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Loss_Breakdown_vs_Pressure_Ratio_Comparison.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Loss_Breakdown_vs_Pressure_Ratio_Comparison.png" alt="Saved specific exergy destruction breakdown for compressor turbine and total across pressure ratio" loading="lazy"/></a><figcaption>Compressor / turbine exergy-destruction breakdown - <a href="https://raw.githubusercontent.com/farhan10904/Brayton-Cycle-Turbine-Simulator/main/Graphs/Loss_Breakdown_vs_Pressure_Ratio_Comparison.png" target="_blank" rel="noopener noreferrer">expand ↗</a></figcaption></figure>
+  </div>
+  <div class="evidence-panel"><p><strong>Interpretation boundary:</strong> These exergy quantities follow the repository's simplified constant-property calculations. The model does not resolve combustion chemistry, fuel exergy, heat transfer to surroundings or a complete combustor exergy balance, so the figures should not be presented as audited plant irreversibility losses.</p></div>
+</section>
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">06 / SOFTWARE</p><h2>Modular calculation and exported results</h2></div></div>
+  <p>The GitHub repository separates <code>Brayton.py</code> (ideal/real cycle state calculations), <code>Config.py</code> (parameters), <code>Sensitivity.py</code> (sweeps), <code>Plots.py</code> (graph functions) and <code>Main.py</code> (simulation pipeline). Pandas exports the pressure-ratio runs and optimum summary to CSV.</p>
+  <p><strong>Representative lines from the real-cycle calculation:</strong></p>
+  <pre class="robot-code"><code>T2s = T1 * pressure_ratio ** ((gamma - 1) / gamma)
+T2 = T1 + (T2s - T1) / compressor_efficiency
+
+P3 = P2 * (1 - combustor_pressure_loss)
+T4s = T3 * (P4 / P3) ** ((gamma - 1) / gamma)
+T4 = T3 - (T3 - T4s) * turbine_efficiency
+
+W_net = Cp * (T3 - T4) - Cp * (T2 - T1)
+power_net = mass_flow_rate * W_net</code></pre>
+  <p>The functions also reject non-physical conditions such as non-positive net work and turbine-inlet temperatures below the compressor outlet temperature.</p>
+  <p><strong>Reproducibility note:</strong> The committed <code>Main.py</code> produces CSV outputs, but its individual plotting calls are currently commented out. Saved graph files remain available; to regenerate them from a fresh run, the required plotting calls must be enabled.</p>
+</section>
+<section class="case-section">
+  <div class="section-header"><div><p class="eyebrow">07 / ENGINEERING REFLECTION</p><h2>What the model establishes - and what it doesn't</h2></div></div>
+  <p>The key engineering result is the trade-off between power and efficiency. Selecting pressure ratio solely for maximum ideal-cycle efficiency can miss the lower net-power optimum of the real-component model. Including imperfect components changes both the magnitude and location of the predicted performance peaks.</p>
+  <p><strong>Next iteration:</strong> Use temperature-dependent specific heat, separate combustor exergy accounting and measured compressor/turbine maps; add structured unit tests and rerun the model against an established published benchmark. These are improvement proposals rather than completed validation.</p>
+  <div class="hero-actions">
+    <a href="https://github.com/farhan10904/Brayton-Cycle-Turbine-Simulator" class="button primary" target="_blank" rel="noopener noreferrer">View Python source and results ↗</a>
+    <a href="https://github.com/farhan10904/Brayton-Cycle-Turbine-Simulator/blob/main/Results/cycle_optima_summary.csv" class="button outline" target="_blank" rel="noopener noreferrer">Download optima CSV ↗</a>
+    <a href="../index.html#featured" class="button outline">Back to projects</a>
+  </div>
+</section></div></div><div id="sidebar"><div class="inner">
       <div class="sidebar-brand"><a href="../index.html" class="sidebar-name">FARHAN ALI<span class="sidebar-suffix"> / ENGINEERING</span></a><div class="sidebar-sub">MEng Mechanical Engineering</div></div>
       <nav id="menu" aria-label="Project navigation"><header class="major"><h2>Explore</h2></header><ul>
         <li><a href="../index.html">Overview</a></li>
