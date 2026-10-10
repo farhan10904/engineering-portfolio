@@ -23,13 +23,17 @@
   const nav = document.querySelector("#menu > ul");
   if (nav) {
     const catHtml = cats.map(cat => {
-      const sub = projects.filter(p => p.category === cat.id);
+      const sub = projects.filter(p => p.category === cat.id || (cat.id === "simulation" && p.id === "bess"));
       if (!sub.length) return "";
       return '<li><span class="opener">' + esc(cat.label) + '</span><ul>' +
         sub.map(p => '<li>' + (pageURL(p) ? '<a href="' + esc(pageURL(p)) + '">' + esc(p.sidebarTitle || p.title) + '</a>' : '<span class="portfolio-muted-nav">' + esc(p.sidebarTitle || p.title) + '</span>') + '</li>').join("") +
       '</ul></li>';
     }).join("");
-    nav.innerHTML = '<li><a href="' + base + 'index.html">Overview</a></li><li><a href="' + base + 'index.html#featured">Featured projects</a></li>' +
+    const featuredNav = projects.filter(p => p.featured && pageURL(p)).map(p =>
+      '<li><a href="' + esc(pageURL(p)) + '">' + esc(p.sidebarTitle || p.title) + '</a></li>'
+    ).join("");
+    nav.innerHTML = '<li><a href="' + base + 'index.html">Overview</a></li>' +
+      '<li><span class="opener">Featured projects</span><ul>' + featuredNav + '</ul></li>' +
       catHtml + '<li><a href="' + base + 'index.html#technical-skills">Technical skills</a></li><li><a href="' + base + 'index.html#writing">Technical writing</a></li><li><a href="' + base + 'index.html#contact">Contact & links</a></li>';
   }
   const featured = document.querySelector("#featured .portfolio-grid");
