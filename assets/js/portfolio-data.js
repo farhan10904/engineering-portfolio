@@ -62,6 +62,25 @@ window.FARHAN_PORTFOLIO = {
       "details": []
     },
     {
+      "id": "bess",
+      "title": "ESP32 battery energy storage controller",
+      "category": "software",
+      "sidebarTitle": "Battery energy storage controller",
+      "featured": true,
+      "visible": true,
+      "ready": true,
+      "page": "projects/bess.html",
+      "accent": "amber",
+      "label": "ENERGY / EMBEDDED SYSTEMS",
+      "summary": "Python battery plant model with supervisory C++ control running on an ESP32; serial hardware-in-the-loop tests cover power limiting, thermal derating and fault responses.",
+      "technologies": "Python · ESP32 · C++ · Serial · HIL · Verification",
+      "github": "https://github.com/farhan10904/ESP32-BESS-Controller",
+      "medium": "",
+      "report": "",
+      "image": "https://raw.githubusercontent.com/farhan10904/ESP32-BESS-Controller/main/docs/evidence/system-architecture.png",
+      "details": []
+    },
+    {
       "id": "brayton",
       "title": "Brayton-cycle gas turbine simulator",
       "category": "simulation",
