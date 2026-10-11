@@ -23,7 +23,7 @@
   const nav = document.querySelector("#menu > ul");
   if (nav) {
     const catHtml = cats.map(cat => {
-      const sub = projects.filter(p => p.category === cat.id || (cat.id === "simulation" && p.id === "bess"));
+      const sub = projects.filter(p => p.category === cat.id || (Array.isArray(p.sidebarCategories) && p.sidebarCategories.includes(cat.id)) || (cat.id === "simulation" && p.id === "bess"));
       if (!sub.length) return "";
       return '<li><span class="opener">' + esc(cat.label) + '</span><ul>' +
         sub.map(p => '<li>' + (pageURL(p) ? '<a href="' + esc(pageURL(p)) + '">' + esc(p.sidebarTitle || p.title) + '</a>' : '<span class="portfolio-muted-nav">' + esc(p.sidebarTitle || p.title) + '</span>') + '</li>').join("") +
