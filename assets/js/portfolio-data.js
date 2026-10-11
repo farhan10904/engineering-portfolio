@@ -84,6 +84,7 @@ window.FARHAN_PORTFOLIO = {
       "id": "bracket",
       "title": "Lightweight motor bracket optimisation",
       "category": "simulation",
+      "sidebarCategories": ["cad", "simulation"],
       "sidebarTitle": "Motor bracket optimisation",
       "featured": true,
       "visible": true,
@@ -96,7 +97,7 @@ window.FARHAN_PORTFOLIO = {
       "github": "https://github.com/farhan10904/lightweight-motor-bracket-fea",
       "medium": "",
       "report": "",
-      "image": "https://raw.githubusercontent.com/farhan10904/lightweight-motor-bracket-fea/main/docs/07_Fillet_R10_CAD.png",
+      "image": "https://raw.githubusercontent.com/farhan10904/lightweight-motor-bracket-fea/main/Results/FEA/01_R10_3p6mm_Deformation.png",
       "details": []
     },
     {
