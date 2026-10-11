@@ -81,6 +81,25 @@ window.FARHAN_PORTFOLIO = {
       "details": []
     },
     {
+      "id": "bracket",
+      "title": "Lightweight motor bracket optimisation",
+      "category": "simulation",
+      "sidebarTitle": "Motor bracket optimisation",
+      "featured": true,
+      "visible": true,
+      "ready": true,
+      "page": "projects/bracket.html",
+      "accent": "sky",
+      "label": "CAD / STRUCTURAL FEA",
+      "summary": "SolidWorks and ANSYS study comparing bend radii, followed by a 15-point plate-thickness sweep and mesh verification. The 3.6 mm R10 option reduced model mass by 9.61% while meeting a 0.5 mm static deflection target.",
+      "technologies": "SolidWorks · ANSYS Mechanical · DesignModeler · FEA",
+      "github": "https://github.com/farhan10904/lightweight-motor-bracket-fea",
+      "medium": "",
+      "report": "",
+      "image": "https://raw.githubusercontent.com/farhan10904/lightweight-motor-bracket-fea/main/docs/07_Fillet_R10_CAD.png",
+      "details": []
+    },
+    {
       "id": "brayton",
       "title": "Brayton-cycle gas turbine simulator",
       "category": "simulation",
