@@ -22,19 +22,18 @@
   const externalLinks = p => [["github","GitHub"],["medium","Medium article"],["report","Technical report"]].filter(x => safe(p[x[0]])).map(([key,label]) => '<a href="' + esc(p[key]) + '" target="_blank" rel="noopener noreferrer" class="button outline">' + label + ' ↗</a>').join("");
   const nav = document.querySelector("#menu > ul");
   if (nav) {
-    const catHtml = cats.map(cat => {
-      const sub = projects.filter(p => p.category === cat.id || (Array.isArray(p.sidebarCategories) && p.sidebarCategories.includes(cat.id)) || (cat.id === "simulation" && p.id === "bess"));
-      if (!sub.length) return "";
-      return '<li><span class="opener">' + esc(cat.label) + '</span><ul>' +
-        sub.map(p => '<li>' + (pageURL(p) ? '<a href="' + esc(pageURL(p)) + '">' + esc(p.sidebarTitle || p.title) + '</a>' : '<span class="portfolio-muted-nav">' + esc(p.sidebarTitle || p.title) + '</span>') + '</li>').join("") +
-      '</ul></li>';
-    }).join("");
-    const featuredNav = projects.filter(p => p.featured && pageURL(p)).map(p =>
+    const list = items => items.filter(p => pageURL(p)).map(p =>
       '<li><a href="' + esc(pageURL(p)) + '">' + esc(p.sidebarTitle || p.title) + '</a></li>'
     ).join("");
+    const main = projects.filter(p => p.featured);
+    const other = projects.filter(p => !p.featured);
     nav.innerHTML = '<li><a href="' + base + 'index.html">Overview</a></li>' +
-      '<li><span class="opener">Featured projects</span><ul>' + featuredNav + '</ul></li>' +
-      catHtml + '<li><a href="' + base + 'index.html#technical-skills">Technical skills</a></li><li><a href="' + base + 'index.html#writing">Technical writing</a></li><li><a href="' + base + 'index.html#contact">Contact & links</a></li>';
+      '<li><span class="opener active">Main Engineering Projects</span><ul>' + list(main) + '</ul></li>' +
+      '<li><span class="opener">Other Projects</span><ul>' + list(other) + '</ul></li>' +
+      '<li><a href="' + base + 'index.html#explore">Explore All Projects</a></li>' +
+      '<li><a href="' + base + 'index.html#writing">Technical writing</a></li>' +
+      '<li><a href="' + base + 'index.html#technical-skills">Technical skills</a></li>' +
+      '<li><a href="' + base + 'index.html#contact">Contact & links</a></li>';
   }
   const featured = document.querySelector("#featured .portfolio-grid");
   if (featured) {
@@ -63,35 +62,51 @@
     const expl = document.querySelector("#featured .section-header > p");
     if (expl) expl.textContent = "Selected engineering projects with technical evidence and further documentation.";
   }
-  const showcase = document.querySelector("#additional-work .archive-showcase-grid");
-  if (showcase) {
-    const curated = projects.filter(p => !p.featured && Number.isInteger(p.showcaseOrder))
-      .sort((a,b) => a.showcaseOrder - b.showcaseOrder);
-    showcase.innerHTML = curated.map(p => {
-      const cat = cats.find(c => c.id === p.category);
-      const href = pageURL(p);
-      const label = esc(cat?.label || "Engineering");
-      const cover = safe(p.image)
-        ? '<img src="' + esc(p.image) + '" alt="' + esc(p.title) + '" loading="lazy" />'
-        : '<div class="archive-teaser-placeholder"><span>' + esc((cat?.label || "Project").toUpperCase()) +
-          '</span><strong>' + esc(p.id === "trading" ? "MA10 / MA50" : p.id === "night-light" ? "LDR / 555" : "NACA 0020") + '</strong></div>';
-      const start = href ? '<a class="archive-teaser" href="' + esc(href) + '">' : '<article class="archive-teaser">';
-      const end = href ? '</a>' : '</article>';
-      return start + '<div class="archive-teaser-cover">' + cover + '</div>' +
-        '<div class="archive-teaser-body"><span class="archive-teaser-category">' + label + '</span>' +
-        '<strong>' + esc(p.title) + '</strong><p>' + esc(p.cardSummary || p.summary || "") + '</p>' +
-        (href ? '<span class="archive-teaser-view">View project ↗</span>' : '') +
-        '</div>' + end;
-    }).join("");
-  }
-  const archive = document.querySelector("#additional-work .archive-grid");
-  if (archive) {
-    archive.innerHTML = cats.map((cat,i) => {
-      const items = projects.filter(p => p.category === cat.id && !p.featured);
-      if (!items.length) return "";
-      return '<div class="archive-block"><span class="archive-index">' + String(i+1).padStart(2,"0") + ' / ' + esc(cat.label.toUpperCase()) + '</span><h3>' + esc(cat.label) + '</h3><ul>' +
-        items.map(p => '<li>' + (pageURL(p) ? '<a href="' + esc(pageURL(p)) + '">' + esc(p.title) + '</a>' : esc(p.title)) + '</li>').join("") + '</ul></div>';
-    }).join("");
+  const explore = document.getElementById("explore-results");
+  if (explore) {
+    const search = document.getElementById("project-search");
+    const filters = document.getElementById("project-filters");
+    const count = document.getElementById("project-count");
+    const clear = document.getElementById("project-clear");
+    const tags = [...new Set(projects.flatMap(p => Array.isArray(p.tags) ? p.tags : []))].sort();
+    const selected = new Set();
+    filters.innerHTML = tags.map(tag => '<button type="button" class="project-filter" aria-pressed="false" data-tag="' + esc(tag) + '">' + esc(tag) + '</button>').join("");
+    const renderExplore = () => {
+      const q = search.value.trim().toLowerCase();
+      const matched = projects.filter(p => {
+        const pTags = Array.isArray(p.tags) ? p.tags : [];
+        const haystack = [p.title,p.sidebarTitle,p.summary,p.technologies,p.type,...pTags].filter(Boolean).join(" ").toLowerCase();
+        return (!q || haystack.includes(q)) && [...selected].every(tag => pTags.includes(tag));
+      });
+      matched.sort((a,b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
+      count.textContent = matched.length + ' of ' + projects.length + ' projects';
+      explore.innerHTML = matched.length ? matched.map(p => {
+        const href = pageURL(p);
+        const cover = safe(p.image) ? '<img loading="lazy" src="' + esc(/^https:\/\//.test(p.image) ? p.image : base + p.image) + '" alt="">' : '<span class="explore-card-placeholder">ENGINEERING / PROJECT</span>';
+        const title = href ? '<a href="' + esc(href) + '">' + esc(p.title) + '</a>' : esc(p.title);
+        const pTags = Array.isArray(p.tags) ? p.tags : [];
+        return '<article class="explore-card"><div class="explore-card-visual">' + cover + '</div><div class="explore-card-content">' +
+          '<p class="explore-card-type">' + (p.featured ? 'MAIN PROJECT' : 'OTHER PROJECT') + '</p>' +
+          '<h3>' + title + '</h3><p>' + esc(p.cardSummary || p.summary || "") + '</p>' +
+          '<div class="explore-card-tags">' + pTags.map(tag => '<span>' + esc(tag) + '</span>').join("") + '</div>' +
+          (href ? '<a class="explore-card-link" href="' + esc(href) + '">View case study ↗</a>' : '') + '</div></article>';
+      }).join("") : '<p class="explore-empty">No projects match. Try removing a filter or changing your search.</p>';
+    };
+    filters.addEventListener("click", event => {
+      const button = event.target.closest("button[data-tag]");
+      if (!button) return;
+      const tag = button.dataset.tag;
+      if (selected.has(tag)) selected.delete(tag); else selected.add(tag);
+      button.setAttribute("aria-pressed", String(selected.has(tag)));
+      renderExplore();
+    });
+    search.addEventListener("input", renderExplore);
+    clear.addEventListener("click", () => {
+      search.value = ""; selected.clear();
+      filters.querySelectorAll("button").forEach(button => button.setAttribute("aria-pressed","false"));
+      renderExplore(); search.focus();
+    });
+    renderExplore();
   }
   const caseEl = document.getElementById("dynamic-project");
   if (caseEl) {
@@ -150,7 +165,7 @@
       : '';
     caseEl.innerHTML =
       '<div class="breadcrumbs"><a href="' + base + 'index.html">Home</a><span>/</span>' +
-      '<a href="' + base + 'index.html#additional-work">Additional work</a><span>/</span><span>' + esc(p.title) + '</span></div>' +
+      '<a href="' + base + 'index.html#explore">Additional work</a><span>/</span><span>' + esc(p.title) + '</span></div>' +
       '<section class="case-hero archive-case-hero"><p class="eyebrow">' + esc((p.type || cat?.label || "ENGINEERING").toUpperCase()) +
       '</p><h1>' + esc(p.title) + '</h1><p class="case-lede">' + esc(p.summary || "") + '</p>' +
       '<p class="archive-technologies">' + esc(p.technologies || "") + '</p>' +
@@ -159,7 +174,7 @@
       '<p class="eyebrow">DOCUMENTATION</p><h2>Related work</h2></div></div>' +
       '<p>The content and images are drawn from the original engineering portfolio and linked project materials. Results are described as coursework, training or prototype work according to their documented scope.</p>' +
       '<div class="hero-actions">' + externalLinks(p) +
-      '<a href="' + base + 'index.html#additional-work" class="button outline">Back to project archive</a></div></section>';
+      '<a href="' + base + 'index.html#explore" class="button outline">Back to project archive</a></div></section>';
 
     // Notion archive images require a one-time upload to assets/images/archive.
     // Until present, hide missing images gracefully instead of showing broken icons.
