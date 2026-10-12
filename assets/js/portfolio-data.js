@@ -25,6 +25,7 @@ window.FARHAN_PORTFOLIO = {
   "projects": [
     {
       "id": "gimbal",
+      "tags": ["CAD","Electronics","Embedded","Controls","PCB","Robotics"],
       "title": "ESP32 dual-axis PID gimbal",
       "category": "embedded",
       "sidebarTitle": "Self-levelling gimbal",
@@ -44,6 +45,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "robot",
+      "tags": ["Embedded","Software","Controls","Robotics","Sensors"],
       "title": "Surgical instrument carrier robot",
       "category": "software",
       "sidebarTitle": "Surgical instrument carrier robot",
@@ -63,6 +65,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "bess",
+      "tags": ["Embedded","Software","Controls","Energy","Simulation","Python"],
       "title": "ESP32 battery energy storage controller",
       "category": "software",
       "sidebarTitle": "Battery energy storage controller",
@@ -82,6 +85,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "bracket",
+      "tags": ["CAD","FEA","Simulation","Mechanical Design"],
       "title": "Lightweight motor bracket optimisation",
       "category": "simulation",
       "sidebarCategories": ["cad", "simulation"],
@@ -102,6 +106,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "brayton",
+      "tags": ["Python","Simulation","Energy","Thermodynamics"],
       "title": "Brayton-cycle gas turbine simulator",
       "category": "simulation",
       "sidebarTitle": "Brayton-cycle simulator",
@@ -121,6 +126,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "radar",
+      "tags": ["Embedded","Electronics","Software","Sensors"],
       "title": "ESP32 ultrasonic radar scanner",
       "category": "embedded",
       "sidebarTitle": "Radar scanner",
@@ -140,6 +146,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "gimbal-frame",
+      "tags": ["CAD","Mechanical Design"],
       "title": "Fusion 360 gimbal frame and electronics enclosure",
       "category": "cad",
       "sidebarTitle": "Gimbal CAD frame & enclosure",
@@ -234,6 +241,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "clutch",
+      "tags": ["CAD","Mechanical Design"],
       "title": "Single-plate automotive clutch assembly",
       "category": "cad",
       "sidebarTitle": "Clutch assembly",
@@ -344,6 +352,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "epicyclic",
+      "tags": ["CAD","Mechanical Design"],
       "title": "Epicyclic planetary gearbox assembly",
       "category": "cad",
       "sidebarTitle": "Epicyclic gear assembly",
@@ -429,6 +438,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "gimbal-pcb",
+      "tags": ["Electronics","PCB"],
       "title": "ESP32 gimbal carrier PCB",
       "category": "electronics",
       "type": "Independent PCB design",
@@ -528,6 +538,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "night-light",
+      "tags": ["Electronics","PCB"],
       "title": "EasyEDA light-sensitive night-light PCB",
       "category": "electronics",
       "type": "University electronics coursework",
@@ -593,6 +604,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "opamp",
+      "tags": ["Electronics"],
       "title": "TinkerCAD op-amp amplifier circuit",
       "category": "electronics",
       "type": "University circuit simulation",
@@ -652,6 +664,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "trading",
+      "tags": ["Python","Software","Simulation"],
       "title": "Algorithmic trading backtesting system",
       "category": "software",
       "type": "Independent Python software project",
@@ -792,6 +805,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "gimbal-simulation",
+      "tags": ["Embedded","Simulation","Software"],
       "title": "Wokwi ESP32 gimbal simulation",
       "category": "simulation",
       "type": "Pre-build embedded simulation",
@@ -854,6 +868,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "radar-simulation",
+      "tags": ["Embedded","Simulation","Software"],
       "title": "Wokwi ESP32 radar simulation",
       "category": "simulation",
       "type": "Pre-build embedded simulation",
@@ -916,6 +931,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "ansys",
+      "tags": ["FEA","Simulation"],
       "title": "ANSYS Workbench simulation training",
       "category": "simulation",
       "type": "Self-directed engineering software training",
@@ -987,6 +1003,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "matlab",
+      "tags": ["Controls","Simulation"],
       "title": "MATLAB and Simulink control-system training",
       "category": "simulation",
       "type": "MathWorks learning courses",
@@ -1048,6 +1065,7 @@ window.FARHAN_PORTFOLIO = {
     },
     {
       "id": "aerofoil",
+      "tags": ["Simulation","Mechanical Design"],
       "title": "NACA 0020 aerofoil wind-tunnel lab",
       "category": "simulation",
       "type": "University experimental fluid dynamics coursework",
