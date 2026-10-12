@@ -30,7 +30,7 @@
     nav.innerHTML = '<li><a href="' + base + 'index.html">Overview</a></li>' +
       '<li><span class="opener active">Main Engineering Projects</span><ul>' + list(main) + '</ul></li>' +
       '<li><span class="opener">Other Projects</span><ul>' + list(other) + '</ul></li>' +
-      '<li><a href="' + base + 'index.html#explore">Explore All Projects</a></li>' +
+      '<li><a href="' + base + 'explore.html">Explore All Projects</a></li>' +
       '<li><a href="' + base + 'index.html#writing">Technical writing</a></li>' +
       '<li><a href="' + base + 'index.html#technical-skills">Technical skills</a></li>' +
       '<li><a href="' + base + 'index.html#contact">Contact & links</a></li>';
@@ -165,7 +165,7 @@
       : '';
     caseEl.innerHTML =
       '<div class="breadcrumbs"><a href="' + base + 'index.html">Home</a><span>/</span>' +
-      '<a href="' + base + 'index.html#explore">Additional work</a><span>/</span><span>' + esc(p.title) + '</span></div>' +
+      '<a href="' + base + 'explore.html">Additional work</a><span>/</span><span>' + esc(p.title) + '</span></div>' +
       '<section class="case-hero archive-case-hero"><p class="eyebrow">' + esc((p.type || cat?.label || "ENGINEERING").toUpperCase()) +
       '</p><h1>' + esc(p.title) + '</h1><p class="case-lede">' + esc(p.summary || "") + '</p>' +
       '<p class="archive-technologies">' + esc(p.technologies || "") + '</p>' +
@@ -174,7 +174,7 @@
       '<p class="eyebrow">DOCUMENTATION</p><h2>Related work</h2></div></div>' +
       '<p>The content and images are drawn from the original engineering portfolio and linked project materials. Results are described as coursework, training or prototype work according to their documented scope.</p>' +
       '<div class="hero-actions">' + externalLinks(p) +
-      '<a href="' + base + 'index.html#explore" class="button outline">Back to project archive</a></div></section>';
+      '<a href="' + base + 'explore.html" class="button outline">Back to project archive</a></div></section>';
 
     // Notion archive images require a one-time upload to assets/images/archive.
     // Until present, hide missing images gracefully instead of showing broken icons.
