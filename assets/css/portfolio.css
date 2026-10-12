@@ -542,3 +542,30 @@ html[data-theme="dark"] .theme-switch span { transform: translateX(1.12em); back
 .explore-card-link{font-size:.81rem;font-weight:700;color:var(--accent);text-decoration:none}
 .explore-empty{grid-column:1/-1;padding:1.6rem;border:1px dashed var(--line);border-radius:10px}
 @media(max-width:700px){.explore-results{grid-template-columns:1fr}.explore-controls{padding:1rem}.explore-card-visual{height:190px}}
+
+/* Keep project navigation independent of the long page content. */
+@media screen and (min-width:1281px) {
+  #sidebar {
+    position:sticky;
+    top:0;
+    align-self:flex-start;
+    height:100vh;
+    height:100dvh;
+  }
+  #sidebar > .inner {
+    height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+    overscroll-behavior-y:contain;
+    scrollbar-width:thin;
+    scrollbar-color:var(--line) transparent;
+  }
+}
+@media screen and (max-width:1280px) {
+  #sidebar > .inner {
+    overflow-y:auto;
+    overscroll-behavior-y:contain;
+    -webkit-overflow-scrolling:touch;
+    touch-action:pan-y;
+  }
+}
