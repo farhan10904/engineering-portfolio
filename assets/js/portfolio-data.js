@@ -38,7 +38,7 @@ window.FARHAN_PORTFOLIO = {
       "summary": "Built a two-axis ESP32 gimbal with MPU6050 feedback, limited-angle PID correction, custom KiCad PCB and printed frame.",
       "technologies": "ESP32 · C/C++ · MPU6050 · PID · KiCad · Fusion 360",
       "github": "https://github.com/farhan10904/ESP32-Self-Levelling-Gimbal",
-      "medium": "",
+      "medium": "https://medium.com/gitconnected/building-an-esp32-self-levelling-gimbal-from-simulation-to-a-custom-pcb-2eee551b347a",
       "report": "",
       "image": "https://raw.githubusercontent.com/farhan10904/ESP32-Self-Levelling-Gimbal/main/docs/images/Diagonal.png",
       "details": []
